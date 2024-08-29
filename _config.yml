@@ -33,10 +33,12 @@ footer-links:
   twitter: 
   stackoverflow: # هويتك في stackoverflow مثلا: "users/50476/bart-kiers"
   googleplus: # رقم التعريف عندما تزور هويتك (كل ما يتبع plus.google.com/)
+  youtube: 
   - title: YouTube
-    link: https://youtube.com/c/ChaelCodes
+    link: https://youtube.com/c/BachirMath
     icon: fa-youtube
 
+  
 
 # ضع الاسم Disqus القصير الخاص بك (الاسم القصير وليس اسم المستخدم) لتفعيل الردود على المدونة
 # ستجد الاسم القصير الخاص بك في إعدادات حسابك في Disqus
