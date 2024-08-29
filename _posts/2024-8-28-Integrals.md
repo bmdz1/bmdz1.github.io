@@ -62,7 +62,7 @@ f(x) = sqrt(x) ### The function.
 a = 1 ### The lower bound.
 b = 9 ### The upper bound.
 G = plot(f(x), (x, a-1, b+1), color = 'red', thickness = 1)
-G = G + plot(f(x), (x, a, b), color = 'green', thickness = 1, fill = true, fillcolor = 'pink')
+G = G + plot(f(x), (x, a, b), color = 'green', thickness = 1, fill = true, fillcolor = 'grey')
 G.show(aspect_ratio = 'automatic')
   </script>
 </div>
