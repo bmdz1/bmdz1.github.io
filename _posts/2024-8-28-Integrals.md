@@ -55,5 +55,16 @@ def midpoint(n = slider(1,100,1,m)):
 
 
 
+<div class="sage">
+  <script type="text/x-sage">
+var('x')
+f(x) = sqrt(x) ### The function.
+a = 1 ### The lower bound.
+b = 9 ### The upper bound.
+G = plot(f(x), (x, a-1, b+1), color = 'red', thickness = 1)
+G = G + plot(f(x), (x, a, b), color = 'green', thickness = 1, fill = true, fillcolor = 'pink')
+  </script>
+</div>
+
 
 
