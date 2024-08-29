@@ -59,7 +59,7 @@ def midpoint(n = slider(1,100,1,4), f = input_box(default = "sqrt(x)", type = st
     for q in range(n):
         xm = midxs[q]
         ym = midys[q]
-        rects = rects + line([[xm,0],[xm,ym],[xm,ym],[xm,0]], rgbcolor = (1,0,0)) + point((xm,ym), rgbcolor = (1,0,0))
+        rects = rects + line([[xm,0],[xm,ym],[xm+dx,ym],[xm+dx,0]], rgbcolor = (1,0,0)) + point((xm,ym), rgbcolor = (1,0,0))
     min_y = min(0, find_local_minimum(func,a,b)[0])
     max_y = max(0, find_local_maximum(func,a,b)[0])
     pretty_print(html('<h3>Numerical integrals with the midpoint rule</h3>'))
