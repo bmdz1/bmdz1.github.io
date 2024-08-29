@@ -12,4 +12,4 @@ permalink: /about/
 [bachirmath1@gmail.com](mailto:bachirmath1@gmail.com)
 
 ### تابعوني
-[BachirMath](url:https://www.youtube.com/@BachirMath )
+[BachirMath](https://www.youtube.com/@BachirMath )
