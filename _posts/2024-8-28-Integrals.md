@@ -14,7 +14,7 @@ tag: التكاملات
 
 
 <div class="sage">
-  <script type="text/x-python">
+  <script type="text/x-sage">
 f(x) = sqrt(x) ### The function.
 a = 1 ### The lower bound.
 b = 9 ### The upper bound.
