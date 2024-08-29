@@ -45,30 +45,4 @@ G.show(aspect_ratio = 'automatic')
 
 
 
-<div class="sage">
-  <script type="text/x-python">
 
-var('x')
-@interact
-def midpoint(n = slider(1,100,1,4), f = input_box(default = "sqrt(x)", type = str), start = input_box(default = "1", type = str), end = input_box(default = "9", type = str)):
-    a = N(start)
-    b = N(end)
-    func = sage_eval(f, locals={'x':x})
-    dx = (b-a)/n
-    midxs = [q*dx + a for q in range(n)]
-    midys = [func(x=x_val) for x_val in midxs]
-    rects = Graphics()
-    for q in range(n):
-        xm = midxs[q]
-        ym = midys[q]
-        rects = rects + line([[xm,0],[xm,ym],[xm+dx,ym],[xm+dx,0]], rgbcolor = (1,0,0)) + point((xm,ym), rgbcolor = (1,0,0))
-    min_y = min(0, find_local_minimum(func,a,b)[0])
-    max_y = max(0, find_local_maximum(func,a,b)[0])
-    pretty_print(html('<h3>Numerical integrals with the midpoint rule</h3>'))
-    pretty_print(html(r'$\int_{a}^{b}{f(x) dx} {\approx} \sum_i{f(x_i) \Delta x}$'))
-    print("\n\nSage numerical answer: " + str(integral_numerical(func,a,b,max_points = 200)[0]))
-    print("Midpoint estimated answer: " + str(RDF(dx*sum([midys[q] for q in range(n)]))))
-    show(plot(func,a,b) + rects, xmin = a, xmax = b, ymin = min_y, ymax = max_y)
-
- </script>
-</div>
