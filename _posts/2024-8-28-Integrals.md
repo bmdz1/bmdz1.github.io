@@ -26,7 +26,7 @@ b = 9 ### The upper bound.
 m = 4
 t = 0 ### 0 for a left Riemann sum, 1 for a right one, 0.5 for a middle one.
 @interact
-def midpoint(n = slider(1,100,1,m)):
+def midpoint(n = slider(1,40,1,m)):
 ###############################################################################################
    I = integral(f(x), x, a, b).n()
    delta = (b-a)/n; tdelta = t*delta; xk = a; L = []; S = 0
