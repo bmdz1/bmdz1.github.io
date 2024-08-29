@@ -32,8 +32,10 @@ footer-links:
   rss: # ضع أي قيمة هنا لتظهر أيقونة RSS
   twitter: 
   stackoverflow: # هويتك في stackoverflow مثلا: "users/50476/bart-kiers"
-  youtube:
   googleplus: # رقم التعريف عندما تزور هويتك (كل ما يتبع plus.google.com/)
+  - title: YouTube
+    link: https://youtube.com/c/ChaelCodes
+    icon: fa-youtube
 
 
 # ضع الاسم Disqus القصير الخاص بك (الاسم القصير وليس اسم المستخدم) لتفعيل الردود على المدونة
