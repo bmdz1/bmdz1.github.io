@@ -41,7 +41,7 @@ def midpoint(n = slider(1,100,1,m)):
       L = L + [(xk, y)]
    S = delta*S.n()
    pretty_print('Integral = %s'%I)
-   pretty_print('Riemann Sum = %s'%S)
+   pretty_print('مجموع ريمان = %s'%S)
    L = L + [(xk,0)]
    G = plot(f(x), (x, a-1, b+1), color = 'red', thickness = 1)
    G = G + plot(f(x), (x, a, b), color = 'green', thickness = 1, fill = true, fillcolor = 'grey')
