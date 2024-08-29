@@ -19,7 +19,7 @@ f(x) = sqrt(x) ### The function.
 a = 1 ### The lower bound.
 b = 9 ### The upper bound.
 n = 4 ### The number of rectangles.
-t = 1 ### 0 for a left Riemann sum, 1 for a right one, 0.5 for a middle one.
+t = 0 ### 0 for a left Riemann sum, 1 for a right one, 0.5 for a middle one.
 ###############################################################################################
 I = integral(f(x), x, a, b).n()
 delta = (b-a)/n; tdelta = t*delta; xk = a; L = []; S = 0
