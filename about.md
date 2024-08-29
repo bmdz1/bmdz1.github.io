@@ -7,9 +7,11 @@ permalink: /about/
 ب. بشير، دكتور ومحاضر في الرياضيات بالمدرسة العليا للأساتذة مستغانم، الجزائر.
 
 
-### لمراسلتي
-
-[bachirmath1@gmail.com](mailto:bachirmath1@gmail.com)
 
 ### تابعوني على اليوتيوب
 [BachirMath](https://www.youtube.com/@BachirMath )
+
+
+### لمراسلتي
+
+[bachirmath1@gmail.com](mailto:bachirmath1@gmail.com)
