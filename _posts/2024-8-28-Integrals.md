@@ -15,32 +15,34 @@ tag: التكاملات
 
 <div class="sage">
   <script type="text/x-python">
-
-import numpy as np
-import matplotlib.pyplot as plt
-
-f = lambda x : 1/(1+x**2)
-a = 0; b = 8; N = 8
-n = 10 # Use n*N+1 points to plot the function smoothly
-
-x = np.linspace(a,b,N+1)
-y = f(x)
-
-X = np.linspace(a,b,n*N+1)
-Y = f(X)
-
-plt.figure(figsize=(9,5))
-
-plt.plot(X,Y,'b')
-x_left = x[:-1] # Left endpoints
-y_left = y[:-1]
-plt.plot(x_left,y_left,'b.',markersize=10)
-plt.bar(x_left,y_left,width=(b-a)/N,alpha=0.2,align='edge',edgecolor='b')
-plt.title('Left Riemann Sum, N = {}'.format(N))
-plt.show()
-   
+f(x) = sqrt(x) ### The function.
+a = 1 ### The lower bound.
+b = 9 ### The upper bound.
+n = 4 ### The number of rectangles.
+t = 1 ### 0 for a left Riemann sum, 1 for a right one, 0.5 for a middle one.
+###############################################################################################
+I = integral(f(x), x, a, b).n()
+delta = (b-a)/n; tdelta = t*delta; xk = a; L = []; S = 0
+for k in range(n):
+    L = L + [(xk, 0)]
+    y = f(xk+tdelta)
+    S = S + y
+    L = L + [(xk,y)]
+    xk = xk + delta
+    L = L + [(xk, y)]
+S = delta*S.n()
+pretty_print('Integral = %s'%I)
+pretty_print('Riemann Sum = %s'%S)
+L = L + [(xk,0)]
+G = plot(f(x), (x, a-(b-a)/20, b+(b-a)/20), color = 'red', thickness = 1)
+G = G + plot(f(x), (x, a-1, b-1), color = 'red', thickness = 1, fill = true, fillcolor = 'grey')
+G = G + polygon(L, edgecolor = 'black', rgbcolor = (t,t^2,1-t))
+G.show(aspect_ratio = 'automatic')
   </script>
 </div>
+
+
+
 
 
 <div class="sage">
