@@ -20,8 +20,6 @@ x_0 = a < x_1 < \cdots < x_N = b
 
 <div class="sage">
   <script type="text/x-sage">
-
-var('x')
 f(x) = sqrt(x) ### The function.
 a = 1 ### The lower bound.
 b = 9 ### The upper bound.
@@ -57,7 +55,6 @@ def midpoint(n = slider(1,100,1,m)):
 
 <div class="sage">
   <script type="text/x-sage">
-var('x')
 f(x) = sqrt(x) ### The function.
 a = 1 ### The lower bound.
 b = 9 ### The upper bound.
