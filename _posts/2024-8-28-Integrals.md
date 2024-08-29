@@ -48,7 +48,7 @@ plt.show()
 
 var('x')
 @interact
-def midpoint(n = slider(1,100,1,4), f = input_box(default = "x^2", type = str), start = input_box(default = "0", type = str), end = input_box(default = "1", type = str)):
+def midpoint(n = slider(1,100,1,4), f = input_box(default = "sqrt(x)", type = str), start = input_box(default = "1", type = str), end = input_box(default = "8", type = str)):
     a = N(start)
     b = N(end)
     func = sage_eval(f, locals={'x':x})
