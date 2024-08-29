@@ -11,5 +11,5 @@ permalink: /about/
 
 [bachirmath1@gmail.com](mailto:bachirmath1@gmail.com)
 
-### تابعوني
+### تابعوني على اليوتيوب
 [BachirMath](https://www.youtube.com/@BachirMath )
