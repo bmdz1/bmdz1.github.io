@@ -28,7 +28,7 @@ t = 0 ### 0 for a left Riemann sum, 1 for a right one, 0.5 for a middle one.
 @interact
 def midpoint(n = slider(1,40,1,m)):
 ###############################################################################################
-   I = integral(f(x), x, a, b).n()
+   I = integral(f(x), x, a, b).n(digits=5)
    delta = (b-a)/n; tdelta = t*delta; xk = a; L = []; S = 0
    for k in range(n):
       L = L + [(xk, 0)]
@@ -37,7 +37,7 @@ def midpoint(n = slider(1,40,1,m)):
       L = L + [(xk,y)]
       xk = xk + delta
       L = L + [(xk, y)]
-   S = delta*S.n()
+   S = delta*S.n(digits=5)
    pretty_print('Integral = %s'%I)
    pretty_print('Riemann sums = %s'%S)
    L = L + [(xk,0)]
