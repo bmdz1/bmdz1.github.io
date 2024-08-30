@@ -14,13 +14,13 @@
 
     <script src="{{ '/javascripts/fontfaceobserver.js' | prepend: site.baseurl }}"></script>
     <script src="{{ '/javascripts/blog.js' | prepend: site.baseurl }}"></script>
-
+    
     <!-- Created with Arabic Jekyll - http://github.com/a3ammar/arabic-jekyll -->
  <!-- SAGE stuff -->
     <script src="https://sagecell.sagemath.org/static/jquery.min.js"></script>
     <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
     <link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css" />
-
+    {% seo %}
     <!-- Custom CSS for LTR SageMath output -->
     <style>
       /* Ensure all SageMath output areas are LTR */
@@ -77,7 +77,7 @@
           languages: sagecell.allLanguages
         });
       });
-    </script>
+    </script>  
   </head>
 
 
