@@ -66,4 +66,11 @@ G.show(aspect_ratio = 'automatic')
 
 
 
+details {
+  padding: 10px;
+  background-color: #e4eaef;
+  border-radius: 5px;
+}
+
+
 
