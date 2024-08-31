@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Topics
+title: محاور
 description: "An archive of posts sorted by tag."
 ---
 
