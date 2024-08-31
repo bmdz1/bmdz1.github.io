@@ -54,15 +54,6 @@ table {
 
 
 
-/* extra styles */
-
-* {box-sizing: border-box;}
-body {font-family: system-ui, sans-serif; margin: 20px; background: #fff9f1;}
-h1 {font-size: 1.2em;}
-details > *:not(summary) {margin: 0.75em 0 0 0;}
-pre {color: white; background: #30353b; padding: 1em; border-radius: 5px;}
-details code {font-size: 1.1em;}
-
 // Apply a natural box layout model to all elements
 // from: http://www.paulirish.com/2012/box-sizing-border-box-ftw/
 *, *:before, *:after {
