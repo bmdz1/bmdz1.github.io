@@ -1,1 +1,1 @@
-ستجد معلومات المشروع وطريقة العمل هنا <https://bachirmath.github.io/>
+ستجد  المشروع  <https://bachirmath.github.io/>
