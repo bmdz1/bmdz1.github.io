@@ -42,7 +42,7 @@ def midpoint(n = slider(1,40,1,m)):
    pretty_print('Riemann sums = %s'%S)
    L = L + [(xk,0)]
    G = plot(f(x), (x, a-1, b+1), color = 'red', thickness = 1)
-   G = G + plot(f(x), (x, a, b), color = 'green', thickness = 1, fill = true, fillcolor = 'grey')
+   G = G + plot(f(x), (x, a, b), color = 'green', thickness = 1, fill = true, fillcolor = 'blue')
    G = G + polygon(L, edgecolor = 'black', rgbcolor = (t,t^2,1-t))
    G.show(aspect_ratio = 'automatic')
 
