@@ -30,3 +30,14 @@ x,a,b,c = var("x,a,b,c")
 solve(a*x**2+b*x+c==0,x)
   </script>
 </div>
+
+
+
+
+<script src="https://utteranc.es/client.js"
+        repo="bachirmath/bachirmath.github.io"
+        issue-term="pathname"
+        theme="github-dark-orange"
+        crossorigin="anonymous"
+        async>
+</script>
