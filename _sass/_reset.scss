@@ -23,6 +23,19 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
+
+
+h1 {
+    color: $blue;
+    font-weight: bold;
+}
+h2 {color: $teal;}
+h3 { color: $dark-magenta;}
+h4 {color: $dark-purple;}
+h5, h6 {color: $red-brick;}
+
+
+
 // HTML5 display-role reset for older browsers
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
