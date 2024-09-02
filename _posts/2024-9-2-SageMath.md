@@ -24,6 +24,6 @@ $$ax^2+bx+c=0.$$
 
 <div class="sage">
   <script type="text/x-sage">
-solve(ax**2+bx+c==0,x)
+solve(a*x**2+b*x+c==0,x)
   </script>
 </div>
