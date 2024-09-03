@@ -24,3 +24,16 @@ tag: التكاملات
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/IKGiPwgSFrk?si=q-714VkDAWVHEcIj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br>
+<br>
+
+
+<script src="https://utteranc.es/client.js"
+        repo="bachirmath/bachirmath.github.io"
+        issue-term="pathname"
+        theme="github-dark-orange"
+        crossorigin="anonymous"
+        async>
+</script>
+
