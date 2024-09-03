@@ -14,4 +14,13 @@ tag: التكاملات
 
 
 
+<br>
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DYUU0qVkNAQ?si=zD4Cpl2HpizlGeWs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+<br>
+<br>
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IKGiPwgSFrk?si=q-714VkDAWVHEcIj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
