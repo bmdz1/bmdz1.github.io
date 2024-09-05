@@ -74,6 +74,13 @@ kramdown:
 plugins:
   - jekyll-seo-tag
 # Set the Sass partials directory, as we're using @imports
+collections:
+  questions:
+    output: true
+    chapters:
+    - Introduction
+    - Next group
+    - Other stuff
 sass:
   style: :expanded # You might prefer to minify using :compressed
 
