@@ -14,8 +14,6 @@ tag: التكاملات
 \frac{d}{dt} \int_a^b f(x, t)dx = \int_a^b \frac{\partial f(x, t)}{\partial t}dx
 \end{equation}
 
-
-
 <br>
 
 
