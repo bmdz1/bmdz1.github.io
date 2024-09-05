@@ -36,7 +36,7 @@ tag: التكاملات
 
 لنعتبر التكامل التالي 
 \begin{equation}
- \int_{0}^{1} \frac{x+1}{x^2+1}dx
+ \int_{0}^{1} \frac{\ln(x+1)}{x^2+1}dx
 \end{equation}
 
 <br>
