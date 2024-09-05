@@ -6,7 +6,7 @@ tag: النهايات
 
 
 $$
-\dd{}{x}\left(e^x\right)?
+\left(e^x\right)?
 $$
 
 1. *$e^x$*{: #correct}
