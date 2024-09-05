@@ -41,7 +41,3 @@ solve(a*x**2+b*x+c==0,x)
         crossorigin="anonymous"
         async>
 </script>
-
-
-
-<iframe scrolling="no" title="Untitled" src="https://www.geogebra.org/material/iframe/id/fje8usvq/width/1466/height/689/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="1466px" height="689px" style="border:0px;"> </iframe>
