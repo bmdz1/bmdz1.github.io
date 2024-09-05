@@ -33,6 +33,21 @@ solve(a*x**2+b*x+c==0,x)
 
 
 
+لإيجاد حل تقريبي للمعادلة
+$$
+x^2 =\exp(x).
+$$
+
+<div class="sage">
+  <script type="text/x-sage">
+x = var('x')
+find_root(exp(x)==x^2,-1,1)
+  </script>
+</div>
+
+
+
+
 
 <script src="https://utteranc.es/client.js"
         repo="bachirmath/bachirmath.github.io"
