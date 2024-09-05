@@ -14,25 +14,9 @@ tag: التكاملات
 \frac{d}{dt} \int_a^b f(x, t)dx = \int_a^b \frac{\partial f(x, t)}{\partial t}dx
 \end{equation}
 
-<br>
 
 
 ### مثال 1:
-
-لنعتبر مثلا تكامل غوس، و هو أحد أهم التكاملات و الذي له تطبيقات في شتى فروع الرياضيات
-
-\begin{equation}
- \int_{0}^{+\infty} e^{-x^2}dx
-\end{equation}
-
-<br>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/AflQCAFtgnA?si=qY05VwxaO4-U-SSV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-<br>
-
-
-### مثال 2:
 
 لنعتبر التكامل التالي 
 \begin{equation}
@@ -46,6 +30,25 @@ tag: التكاملات
 <iframe width="560" height="315" src="https://www.youtube.com/embed/IKGiPwgSFrk?si=q-714VkDAWVHEcIj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <br>
+
+
+<br>
+
+
+### مثال 2:
+
+لنعتبر مثلا تكامل غوس، و هو أحد أهم التكاملات و الذي له تطبيقات في شتى فروع الرياضيات
+
+\begin{equation}
+ \int_{0}^{+\infty} e^{-x^2}dx
+\end{equation}
+
+<br>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/AflQCAFtgnA?si=qY05VwxaO4-U-SSV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br>
+
 <br>
 
 
