@@ -1,1 +1,16 @@
+---
+layout: post
+title: النهايات
+tag: النهايات
+---
 
+
+$$
+\dd{}{x}\left(e^x\right)?
+$$
+
+1. *$e^x$*{: #correct}
+1. $x$
+1. $1$
+1. $\ln(x)$
+1. $\tan(x)$
