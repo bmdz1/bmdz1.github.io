@@ -29,7 +29,10 @@ $$
 e^{z}=e^{x}  e^{i y}=e^{x}(\cos y+i \sin y)
 \end{equation}
 
+
 و هذا ينتج ما يلي
+
+<br>
 
 $$
 \begin{split}
