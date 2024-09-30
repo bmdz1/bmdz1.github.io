@@ -36,10 +36,10 @@ e^{z}=e^{x}  e^{i y}=e^{x}(\cos y+i \sin y)
 
 $$
 \begin{split}
-x + iy &= \gamma (\cos \theta + i \sin \theta) = \gamma e^{i \theta} \\
+x + iy &= \gamma (\cos \theta + i \sin \theta) = r e^{i \theta} \\
 z &= x + iy \\
-&= \gamma (\cos \theta + i \sin \theta) \\
-&= \gamma e^{i \theta}
+&= r (\cos \theta + i \sin \theta) \\
+&= r e^{i \theta}
 \end{split}
 $$
 
