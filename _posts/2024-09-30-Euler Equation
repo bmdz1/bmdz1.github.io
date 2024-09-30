@@ -3,3 +3,9 @@ layout: post
 title: برهان متطابقة أويلر
 tag: جبر
 ---
+
+أولا نذكر بنشر الدالة الأسية (تايلور)
+
+\begin{equation}
+e^{z}=1+\frac{z}{1 !}+\frac{z^{2}}{2 !}+\ldots+\frac{z^{n}}{n !}+\cdots
+\end{equation}
