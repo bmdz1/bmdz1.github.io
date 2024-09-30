@@ -13,6 +13,8 @@ e^{z}=1+\frac{z}{1 !}+\frac{z^{2}}{2 !}+\ldots+\frac{z^{n}}{n !}+\cdots
 
 
 بجعل \\(z=x+iy\\) و \\(x=0\\)، نجد \\(z=iy\\)، و عليه
+<br>
+
 $$
 \begin{split}
 e^{i y} &=1+\frac{i y}{1 !}+\frac{(i y)^{2}}{2 !}+\frac{(i y)^{3}}{3 !}+\frac{(i y)^{4}}{4 !}+\cdots  \\
