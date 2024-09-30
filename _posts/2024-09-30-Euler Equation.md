@@ -34,11 +34,4 @@ e^{z}=e^{x}  e^{i y}=e^{x}(\cos y+i \sin y)
 
 <br>
 
-$$
-\begin{split}
-x+i y &=\gamma(\cos \theta+i \sin \theta)=\gamma e^{i \theta} \\
-z &=x+i y \\
-&=\gamma(\sin \theta+i \sin \theta) \\
-&\left.=\gamma e^{i \theta} 
-\end{split}
-$$
+
