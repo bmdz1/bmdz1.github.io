@@ -19,3 +19,9 @@ e^{i y} &=1+\frac{i y}{1 !}+\frac{(i y)^{2}}{2 !}+\frac{(i y)^{3}}{3 !}+\frac{(i
 &=\left(1-\frac{y^{2}}{2 !}+\frac{y^{4}}{4 !}-\cdots\right)+i\left(y-\frac{y^{3}}{3 !}+\frac{y^{5}}{5 !}-\cdots\right) \\
 &=\cos y+i \sin y
 \end{aligned}
+
+و منه نجد
+
+\begin{equation}
+e^{z}=e^{x}  e^{i y}=e^{x}(\cos y+i \sin y)
+\end{equation}
