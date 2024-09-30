@@ -44,7 +44,7 @@ $$
 
 $$
 \begin{split}
-e^{0+i\pi} &= (\cos\pi +i \sin\pi) \\
+e^{i\pi} &= (\cos\pi +i \sin\pi) \\
 &= 1 (-1 + i 0) \\
 &= -1
 \end{split}
