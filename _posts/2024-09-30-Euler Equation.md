@@ -29,28 +29,25 @@ $$
 e^{z}=e^{x}  e^{i y}=e^{x}(\cos y+i \sin y)
 \end{equation}
 
-
-و هذا ينتج ما يلي
-
-<br>
-
-$$
-\begin{split}
-x + iy &= \gamma (\cos \theta + i \sin \theta) = r e^{i \theta} \\
-z &= x + iy \\
-&= r (\cos \theta + i \sin \theta) \\
-&= r e^{i \theta}
-\end{split}
-$$
+بأخذ \\(x=0\\) و \\(y=\pi\\) ،  فإن
 
 <br>
 
 $$
 \begin{split}
-&-1=-1+i(0) \\
-&\Rightarrow r= \sqrt{(-1)^{2}}=1 \\
-&\Rightarrow \theta=\pi \\
-&\Rightarrow e^{i\pi}=-1
+e^{0+i\pi} &= e^{0}(\cos\pi +i \sin\pi) \\
+&= 1 (-1 + i 0) \\
+&= -1
 \end{split}
 $$
+
+و هذا يعطي
+
+<br>
+
+
+\begin{equation}
+e^{i\pi}+1=0
+\end{equation}
+
 
