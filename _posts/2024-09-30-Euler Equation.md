@@ -43,3 +43,14 @@ z &= x + iy \\
 \end{split}
 $$
 
+<br>
+
+$$
+\begin{split}
+&-1=-1+i(0) \\
+&\Rightarrow r= \sqrt{(-1)^{2}}=1 \\
+&\Rightarrow \theta=\pi \\
+&\Rightarrow e^{i\pi}=-1
+\end{split}
+$$
+
