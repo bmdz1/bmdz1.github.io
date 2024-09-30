@@ -29,23 +29,22 @@ e^{i y} &=1+\frac{i y}{1 !}+\frac{(i y)^{2}}{2 !}+\frac{(i y)^{3}}{3 !}+\frac{(i
 \end{split}
 $$
 
-و منه نجد
+<br>
 
-\begin{equation}
-e^{z}=e^{x}  e^{i y}=e^{x}(\cos y+i \sin y)
-\end{equation}
 
-بأخذ \\(x=0\\) و \\(y=\pi\\) ،  فإن
+بأخذ  \\(y=\pi\\) ،  فإن
 
 <br>
 
 $$
 \begin{split}
-e^{0+i\pi} &= e^{0}(\cos\pi +i \sin\pi) \\
+e^{0+i\pi} &= (\cos\pi +i \sin\pi) \\
 &= 1 (-1 + i 0) \\
 &= -1
 \end{split}
 $$
+
+<br>
 
 و هذا يعطي
 
