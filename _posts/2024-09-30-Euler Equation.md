@@ -34,12 +34,12 @@ e^{z}=e^{x}  e^{i y}=e^{x}(\cos y+i \sin y)
 
 <br>
 
-\[
+$$
 \begin{split}
 x + iy &= \gamma (\cos \theta + i \sin \theta) = \gamma e^{i \theta} \\
 z &= x + iy \\
 &= \gamma (\cos \theta + i \sin \theta) \\
 &= \gamma e^{i \theta}
 \end{split}
-\]
+$$
 
