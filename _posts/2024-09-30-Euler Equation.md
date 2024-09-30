@@ -10,7 +10,7 @@ height: 85%; width: 85%; margin-left: 1em; margin-top: 2em;"}{:class="img-respon
 <br>
 
 
-أولا نذكر بنشر الدالة الأسية (تايلور)
+أولا نذكر بنشر الدالة الأسية (نشر تايلور)
 
 
 <br>
