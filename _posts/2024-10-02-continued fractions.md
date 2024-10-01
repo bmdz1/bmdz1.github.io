@@ -4,8 +4,6 @@ title: كسور مستمرة (جذر 2)
 tag: جبر
 ---
 
-![Euler identity.png](/images/Euler identity.png){: style="float: center; 
-height: 85%; width: 85%; margin-left: 1em; margin-top: 2em;"}{:class="img-responsive"}
 
 <br>
 
