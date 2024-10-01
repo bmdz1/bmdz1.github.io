@@ -9,9 +9,7 @@ height: 85%; width: 85%; margin-left: 1em; margin-top: 2em;"}{:class="img-respon
 
 <br>
 
-
 أولا نذكر بنشر الدالة الأسية (نشر تايلور)
-
 
 <br>
 
@@ -21,10 +19,7 @@ e^{z}=1+\frac{z}{1 !}+\frac{z^{2}}{2 !}+\ldots+\frac{z^{n}}{n !}+\cdots
 
 <br>
 
-
 بجعل \\(z=x+iy\\) و \\(x=0\\)، نجد \\(z=iy\\)، و عليه
-
-<br>
 <br>
 
 $$
