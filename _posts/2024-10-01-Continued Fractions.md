@@ -4,6 +4,8 @@ title: كسور مستمرة (جذر 2)
 tag: جبر
 ---
 
+![sqrt2.png](/images/sqrt2.png){: style="float: center; 
+height: 90%; width: 95%; margin-left: 1em; margin-top: 2em;"}{:class="img-responsive"}
 
 <br>
 
