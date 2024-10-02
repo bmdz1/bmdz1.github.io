@@ -1,0 +1,70 @@
+---
+layout: post
+title: كسور مستمرة (جذر 2)
+tag: جبر
+---
+
+![sqrt2.png](/images/sqrt2.png){: style="float: center; 
+height: 90%; width: 95%; margin-left: 1em; margin-top: 2em;"}{:class="img-responsive"}
+
+<br>
+
+لدينا
+
+<br>
+
+$$
+\begin{split}
+(\sqrt{5}-2)(\sqrt{5}+2)&=\sqrt{5}^2-2^2\\
+&=5-4\\
+&=1
+\end{split}
+$$
+
+<br>
+
+ و عليه
+<br>
+
+$$
+\sqrt{5}-2=\frac{1}{2+\sqrt{5}}
+$$
+
+<br>
+
+و هذا ينتج
+
+<br>
+
+$$
+\color{blue}{\sqrt{5}=2+\frac{1}{2+\sqrt{5}}}
+$$
+
+<br>
+
+وبإستعمال هذه النتيجة بالتكرار، نجد
+
+$$
+\begin{split}
+\sqrt{5}&=2+\cfrac{1}{2+\color{blue}{\sqrt{5}}}\\
+&=2+\cfrac{1}{2+\color{blue}{2+\cfrac{1}{2+\sqrt{5}}}}=2+\cfrac{1}{4+\cfrac{1}{2+\color{blue}{\sqrt{5}}}}\\
+&=2+\cfrac{1}{4+\cfrac{1}{4+\color{blue}{4+\cfrac{1}{1+\sqrt{5}}}}}=2+\cfrac{1}{4+\cfrac{1}{4+\cfrac{1}{1+\color{blue}{\sqrt{5}}}}}\\
+&=2+\cfrac{1}{4+\cfrac{1}{4+\cfrac{1}{4+\cdots}}}
+\end{split}
+$$
+
+<br>
+
+على سبيل المثال
+
+$$
+2+\cfrac{1}{4+\cfrac{1}{4+\cfrac{1}{4+1}}}=\cfrac{199}{89}\approx 2.236\approx \sqrt{5}
+$$
+
+تعد هذه الطريقة إحدى طرق الحساب التقريبي
+
+
+
+
+
+
