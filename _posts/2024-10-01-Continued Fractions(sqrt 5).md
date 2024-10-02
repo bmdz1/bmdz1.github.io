@@ -48,7 +48,7 @@ $$
 \begin{split}
 \sqrt{5}&=2+\cfrac{1}{2+\color{blue}{\sqrt{5}}}\\
 &=2+\cfrac{1}{2+\color{blue}{2+\cfrac{1}{2+\sqrt{5}}}}=2+\cfrac{1}{4+\cfrac{1}{2+\color{blue}{\sqrt{5}}}}\\
-&=2+\cfrac{1}{4+\cfrac{1}{4+\color{blue}{4+\cfrac{1}{1+\sqrt{5}}}}}=2+\cfrac{1}{4+\cfrac{1}{4+\cfrac{1}{1+\color{blue}{\sqrt{5}}}}}\\
+&=2+\cfrac{1}{4+\cfrac{1}{2+\color{blue}{2+\cfrac{1}{2+\sqrt{5}}}}}=2+\cfrac{1}{4+\cfrac{1}{4+\cfrac{1}{2+\color{blue}{\sqrt{5}}}}}\\
 &=2+\cfrac{1}{4+\cfrac{1}{4+\cfrac{1}{4+\cdots}}}
 \end{split}
 $$
