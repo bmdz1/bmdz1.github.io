@@ -58,8 +58,10 @@ $$
 $$
 \begin{split}
 \sqrt{2}&=1+\cfrac{1}{1+\color{blue}{\sqrt{2}}}\\
-&=1+\cfrac{1}{1+\color{blue}{1+\cfrac{1}{1+\sqrt{2}}}}=1+\cfrac{1}{2+\cfrac{1}{1+\color{blue}{\sqrt{2}}}}\\
-&=1+\cfrac{1}{2+\cfrac{1}{1+\color{blue}{1+\cfrac{1}{1+\sqrt{2}}}}}=1+\cfrac{1}{2+\cfrac{1}{2+\cfrac{1}{1+\color{blue}{\sqrt{2}}}}}\\
+&=1+\cfrac{1}{1+\color{blue}{1+\cfrac{1}{1+\sqrt{2}}}}\\
+&=1+\cfrac{1}{2+\cfrac{1}{1+\color{blue}{\sqrt{2}}}}\\
+&=1+\cfrac{1}{2+\cfrac{1}{1+\color{blue}{1+\cfrac{1}{1+\sqrt{2}}}}}\\
+&=1+\cfrac{1}{2+\cfrac{1}{2+\cfrac{1}{1+\color{blue}{\sqrt{2}}}}}\\
 &=1+\cfrac{1}{2+\cfrac{1}{2+\cfrac{1}{2+\cdots}}}
 \end{split}
 $$
