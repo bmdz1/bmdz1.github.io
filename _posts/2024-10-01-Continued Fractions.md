@@ -71,7 +71,10 @@ $$
 على سبيل المثال
 
 $$
-1+\cfrac{1}{2+\cfrac{1}{2+\cfrac{1}{2+1}}}=\cfrac{24}{17}=1.41..\approx \sqrt{2}
+\begin{split}
+1+\cfrac{1}{2+\cfrac{1}{2+\cfrac{1}{2+1}}}&=\cfrac{24}{17}\\ \\
+1+\cfrac{1}{2+\cfrac{1}{2+\cfrac{1}{2+1}}}&\approx 1.41..\approx \sqrt{2}
+\end{split}
 $$
 
 تعد هذه الطريقة إحدى طرق الحساب التقريبي
