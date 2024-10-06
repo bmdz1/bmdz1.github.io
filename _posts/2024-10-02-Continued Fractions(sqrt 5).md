@@ -67,8 +67,8 @@ $$
 
 $$
 \begin{split}
-2+\cfrac{1}{4+\cfrac{1}{4+\cfrac{1}{4+1}}}&=\cfrac{199}{89}\approx 2.236\\ \\
-2+\cfrac{1}{4+\cfrac{1}{4+\cfrac{1}{4+1}}}&\approx \sqrt{5}
+2+\cfrac{1}{4+\cfrac{1}{4+\cfrac{1}{4+1}}}&=\cfrac{199}{89}\\ \\
+2+\cfrac{1}{4+\cfrac{1}{4+\cfrac{1}{4+1}}}&\approx 2.236\approx \sqrt{5}
 \end{split}
 $$
 
