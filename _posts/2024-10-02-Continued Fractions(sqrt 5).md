@@ -4,8 +4,11 @@ title: كسور مستمرة (جذر 5)
 tag: جبر
 ---
 
-![sqrt5.png](/images/sqrt5.png){: style="float: center; 
-height: 90%; width: 95%; margin-left: 1em; margin-top: 2em;"}{:class="img-responsive"}
+##بين أن
+
+$$
+\sqrt{5}=2+\cfrac{1}{4+\cfrac{1}{4+\cfrac{1}{4+\cdots}}}
+$$
 
 <br>
 
