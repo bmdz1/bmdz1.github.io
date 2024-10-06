@@ -57,7 +57,7 @@ $$
 &=2+\cfrac{1}{4+\cfrac{1}{2+\color{blue}{\sqrt{5}}}}\\
 &=2+\cfrac{1}{4+\cfrac{1}{2+\color{blue}{2+\cfrac{1}{2+\sqrt{5}}}}}\\
 &=2+\cfrac{1}{4+\cfrac{1}{4+\cfrac{1}{2+\color{blue}{\sqrt{5}}}}}\\
-&=2+\cfrac{1}{4+\cfrac{1}{4+\cfrac{1}{4+\cdots}}}
+\sqrt{5}&=2+\cfrac{1}{4+\cfrac{1}{4+\cfrac{1}{4+\cdots}}}
 \end{split}
 $$
 
