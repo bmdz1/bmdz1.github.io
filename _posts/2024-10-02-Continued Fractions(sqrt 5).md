@@ -53,8 +53,10 @@ $$
 $$
 \begin{split}
 \sqrt{5}&=2+\cfrac{1}{2+\color{blue}{\sqrt{5}}}\\
-&=2+\cfrac{1}{2+\color{blue}{2+\cfrac{1}{2+\sqrt{5}}}}=2+\cfrac{1}{4+\cfrac{1}{2+\color{blue}{\sqrt{5}}}}\\
-&=2+\cfrac{1}{4+\cfrac{1}{2+\color{blue}{2+\cfrac{1}{2+\sqrt{5}}}}}=2+\cfrac{1}{4+\cfrac{1}{4+\cfrac{1}{2+\color{blue}{\sqrt{5}}}}}\\
+&=2+\cfrac{1}{2+\color{blue}{2+\cfrac{1}{2+\sqrt{5}}}}\\
+&=2+\cfrac{1}{4+\cfrac{1}{2+\color{blue}{\sqrt{5}}}}\\
+&=2+\cfrac{1}{4+\cfrac{1}{2+\color{blue}{2+\cfrac{1}{2+\sqrt{5}}}}}\\
+&=2+\cfrac{1}{4+\cfrac{1}{4+\cfrac{1}{2+\color{blue}{\sqrt{5}}}}}\\
 &=2+\cfrac{1}{4+\cfrac{1}{4+\cfrac{1}{4+\cdots}}}
 \end{split}
 $$
@@ -64,7 +66,10 @@ $$
 على سبيل المثال
 
 $$
-2+\cfrac{1}{4+\cfrac{1}{4+\cfrac{1}{4+1}}}=\cfrac{199}{89}\approx 2.236\approx \sqrt{5}
+\begin{split}
+2+\cfrac{1}{4+\cfrac{1}{4+\cfrac{1}{4+1}}}&=\cfrac{199}{89}\approx 2.236\\ \\
+2+\cfrac{1}{4+\cfrac{1}{4+\cfrac{1}{4+1}}}&\approx \sqrt{5}
+\end{split}
 $$
 
 تعد هذه الطريقة إحدى طرق الحساب التقريبي
