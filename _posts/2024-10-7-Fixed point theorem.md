@@ -35,3 +35,4 @@ x_{0}
 \end{cases}
 $$
 
+ بمتتالية التكرار بالنقطة الثابتة (Fixed Point Iteration Sequence)
