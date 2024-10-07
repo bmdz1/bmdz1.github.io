@@ -47,8 +47,8 @@ $$
 
 $$
 \begin{split}
-x^{*}\in I\\
-x^{*}=g(x^{*})
+x^{*}&\in I\\
+x^{*}&=g(x^{*})
 \end{split}
 $$
  
