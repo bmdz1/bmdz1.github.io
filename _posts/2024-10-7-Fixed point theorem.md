@@ -6,9 +6,14 @@ tag: تحليل
 
 # طريقة التكرار بنقطة ثابتة
 
+ليكن \\(I\\) مجال مغلق من \\(\mathbb{R}\\) و لتكن
+
 
 $$
-\sqrt{5}=2+\cfrac{1}{4+\cfrac{1}{4+\cfrac{1}{4+\cdots}}}
+\begin{split}
+g:&I\longrightarrow I
+x&\longrightarrow g(x)
+\end{split}
 $$
 
 
