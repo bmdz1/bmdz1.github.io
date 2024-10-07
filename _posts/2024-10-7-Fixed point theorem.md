@@ -11,7 +11,7 @@ tag: تحليل
 
 $$
 \begin{split}
-g:&I\longrightarrow I
+g:&I\longrightarrow I\\
 x&\longrightarrow g(x)
 \end{split}
 $$
