@@ -30,11 +30,13 @@ $$
 
 $$
 \begin{cases}
-x_{n+1}=g(x_{n})\\
+x_{n+1}=g(x_{n}),\,n\geq 0\\
 x_{0}
 \end{cases}
 $$
 
  بمتتالية التكرار بالنقطة الثابتة (Fixed Point Iteration )
+
+
 
  
