@@ -119,7 +119,7 @@ import numpy as np
 x=0
 for n in range(0, 10):
         x=np.cos(x);
-        print(f"x_{n+1}: {x}")
+        print(f"x_{n+1}= {x}")
 error=abs(x-np.cos(x))
 print(f"error= {error}")
   </script>
