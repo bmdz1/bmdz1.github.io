@@ -41,6 +41,8 @@ $$
 <br>
 نفرض أن الدالة \\(g\\) مستمرة، فنجد النظرية التالية
 
+
+<div style="border: 2px solid black; padding: 10px;">
 ### نظرية:
 
 إذا تقاربت المتتالية \\( \{x_{n}\} \\) نحو نقطة \\(x^{*}\\)، فإن
@@ -52,11 +54,9 @@ x^{*}&\in I\\
 x^{*}&=g(x^{*})
 \end{split}
 $$
-
-
-<div style="border: 2px solid black; padding: 10px;">
-This is text with a border around it.
 </div>
+
+
  
 ### برهان:
 
