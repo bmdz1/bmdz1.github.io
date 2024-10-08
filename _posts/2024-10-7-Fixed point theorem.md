@@ -137,7 +137,7 @@ print(f"error= {error}")
 
 <div class="sage">
   <script type="text/x-sage">
-def cobweb(a_function, start, mask = 0, iterations = 20, xmin = 0, xmax = 1.6):
+def cobweb(a_function, start, mask = 0, iterations = 20, xmin = 0, xmax = 1.2):
     basic_plot = plot(a_function, xmin = xmin, xmax = xmax,rgbcolor = (0.2,0.9,0.2))
     id_plot = plot(lambda x: x, xmin = xmin, xmax = xmax)
     iter_list = []
