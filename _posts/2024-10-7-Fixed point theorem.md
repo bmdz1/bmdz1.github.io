@@ -56,7 +56,7 @@ $$
  
 ### برهان:
 
-بما أن \\(forall n, x_{n}\in I\ \\)، و \\(I\\) مغلق، فإن
+بما أن \\(\forall  n, x_{n}\in I \\)، و \\(I\\) مغلق، فإن
 
 $$
 x^{*}=\lim_{n\to\infty}x_{n}\in I
@@ -66,8 +66,7 @@ $$
 
 $$
 \begin{split}
-x^{*}&= \lim_{n\to\infty}x_{n+1}\\
-&=\lim_{n\to\infty} g(x_{n})\\
+x^{*}&= \lim_{n\to\infty}x_{n+1}=\lim_{n\to\infty} g(x_{n})\\
 &=g(\lim_{n\to\infty}  x_{n})\\
 x^{*}&=g(x^{*})
 \end{split}
