@@ -53,6 +53,10 @@ x^{*}&=g(x^{*})
 \end{split}
 $$
 
+
+<div style="border: 2px solid black; padding: 10px;">
+This is text with a border around it.
+</div>
  
 ### برهان:
 
