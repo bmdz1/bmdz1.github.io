@@ -135,31 +135,4 @@ print(f"error= {error}")
 
 <br>
 
-<div class="sage">
-  <script type="text/x-sage">
-def cobweb(a_function, start, mask = 0, iterations = 20, xmin = 0, xmax = 1.6):
-    basic_plot = plot(a_function, xmin = xmin, xmax = xmax,rgbcolor = (0.2,0.5,0.6))
-    id_plot = plot(lambda x: x, xmin = xmin, xmax = xmax)
-    iter_list = []
-    current = start
-    for i in range(mask):
-        current = a_function(current)
-    for i in range(iterations):
-        iter_list.append([current,a_function(current)])
-        current = a_function(current)
-        iter_list.append([current,current])
-    cobweb = line(iter_list, rgbcolor = (1,0,0))
-    return basic_plot + id_plot + cobweb
-var('x')
-@interact
-def cobwebber(f_text = input_box(default = "cos(x)",label = "function", type=str), start_val = slider(0,1,.05,0,label = 'start value'), its = slider([i+1 for i in range(0,16)],default = 10, label="iterations")):
-    def f(x):
-        return eval(f_text)
-    show(cobweb(f, start_val, iterations = its))
-  </script>
-</div>
-
-
-
-
 <iframe src="https://www.geogebra.org/classic/pjbkr9yx?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
