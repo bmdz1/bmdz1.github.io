@@ -146,7 +146,7 @@ def cobweb(a_function, start, mask = 0, iterations = 20, xmin = 0, xmax = 1.6):
     return basic_plot + id_plot + cobweb
 var('x')
 @interact
-def cobwebber(f_text = input_box(default = "cos(x)",label = "function", type=str), start_val = slider(0,1,.01,.5,label = 'start value'), its = slider([i+1 for i in range(0,12)],default = 16, label="iterations")):
+def cobwebber(f_text = input_box(default = "cos(x)",label = "function", type=str), start_val = slider(0,1,.05,0,label = 'start value'), its = slider([i+1 for i in range(0,16)],default = 10, label="iterations")):
     def f(x):
         return eval(f_text)
     show(cobweb(f, start_val, iterations = its))
