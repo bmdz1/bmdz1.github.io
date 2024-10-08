@@ -116,13 +116,12 @@ $$
 <div class="sage">
   <script type="text/x-sage">
 import numpy as np
-x0=0
+x=0
 for n in range(0, 10):
-        x0=np.cos(x0);
-        print(x0)
-
-error=abs(x0-np.cos(x0))
-error
+        x=np.cos(x);
+        print(f"x_{n+1}: {x}")
+error=abs(x-np.cos(x))
+print(f"error= {error}")
   </script>
 </div>
 
