@@ -113,6 +113,8 @@ x_{0}=0
 \end{cases}
 $$
 
+نستعمل نظام SageMath لحساب بعض الحدود لهذه المتتالية
+
 <div class="sage">
   <script type="text/x-sage">
 import numpy as np
