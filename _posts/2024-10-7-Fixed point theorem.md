@@ -158,3 +158,8 @@ def cobwebber(f_text = input_box(default = "cos(x)",label = "function", type=str
     show(cobweb(f, start_val, iterations = its))
   </script>
 </div>
+
+
+
+
+<iframe src="https://www.geogebra.org/classic/pjbkr9yx?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
