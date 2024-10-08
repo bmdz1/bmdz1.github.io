@@ -138,7 +138,7 @@ print(f"error= {error}")
 <div class="sage">
   <script type="text/x-sage">
 def cobweb(a_function, start, mask = 0, iterations = 20, xmin = 0, xmax = 1.6):
-    basic_plot = plot(a_function, xmin = xmin, xmax = xmax,rgbcolor = (0.2,0.5,0.6))
+    basic_plot = plot(a_function, xmin = xmin, xmax = xmax,rgbcolor = (0.2,0.9,0.2))
     id_plot = plot(lambda x: x, xmin = xmin, xmax = xmax)
     iter_list = []
     current = start
@@ -152,7 +152,7 @@ def cobweb(a_function, start, mask = 0, iterations = 20, xmin = 0, xmax = 1.6):
     return basic_plot + id_plot + cobweb
 var('x')
 @interact
-def cobwebber(f_text = input_box(default = "cos(x)",label = "function", type=str), start_val = slider(0,1,.05,0,label = 'start value'), its = slider([i+1 for i in range(0,12)],default = 10, label="iterations")):
+def cobwebber(f_text = input_box(default = "cos(x)",label = "function", type=str), start_val = slider(0,1,.05,0,label = 'start value'), its = slider([i+1 for i in range(0,20)],default = 10, label="iterations")):
     def f(x):
         return eval(f_text)
     show(cobweb(f, start_val, iterations = its))
