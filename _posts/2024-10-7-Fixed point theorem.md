@@ -135,4 +135,4 @@ print(f"error= {error}")
 
 <br>
 
-<iframe src="https://www.geogebra.org/classic/pjbkr9yx?embed" width="600" height="450" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+<iframe src="https://www.geogebra.org/classic/pjbkr9yx?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
