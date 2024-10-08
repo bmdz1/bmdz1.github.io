@@ -89,7 +89,14 @@ $$
 x=\cos(x)
 $$
 
+لكي نحل المعادلة في \\(\mathbb{R}\\)، يجب أن نكتب مسألتنا على الشكل الذي إعتبرناه، فهنا يمكننا إعتبار الدالة
 
+$$
+\begin{split}
+g:[0,1]&\longrightarrow [0,1]\\
+x&\longrightarrow g(x)=cos(x)
+\end{split}
+$$
 
 
 
