@@ -125,8 +125,6 @@ x=0;n=10
 for i in range(0, n):
         x=np.cos(x);
         print(f"x_{i+1}= {x}")
-error=abs(x-np.cos(x))
-print(f"error= {error}")
   </script>
 </div>
 
