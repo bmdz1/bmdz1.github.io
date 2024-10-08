@@ -44,10 +44,10 @@ $$
 
 
 ### نظرية:
-<div style="border: 2px solid black; padding: 10px;">
+
 إذا تقاربت المتتالية \\( \{x_{n}\} \\) نحو نقطة \\(x^{*}\\)، فإن
 
-
+<div style="border: 8px solid black; padding: 10px;">
 $$
 \begin{split}
 x^{*}&\in I\\
