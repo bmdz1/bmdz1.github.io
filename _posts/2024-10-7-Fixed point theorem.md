@@ -42,9 +42,9 @@ $$
 نفرض أن الدالة \\(g\\) مستمرة، فنجد النظرية التالية
 
 
-<div style="border: 2px solid black; padding: 10px;">
-### نظرية:
 
+### نظرية:
+<div style="border: 2px solid black; padding: 10px;">
 إذا تقاربت المتتالية \\( \{x_{n}\} \\) نحو نقطة \\(x^{*}\\)، فإن
 
 
