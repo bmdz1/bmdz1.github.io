@@ -113,18 +113,16 @@ x_{0}=0
 \end{cases}
 $$
 
-| Syntax      | Description | Test Text     |
-| :---        |    :----:   |          ---: |
-| Header      | Title       | Here's this   |
-| Paragraph   | Text        | And more      |
+<div class="sage">
+  <script type="text/x-sage">
+import numpy as np
+x0=0
+for n in range(0, 10):
+        x0=np.cos(x0);
+        print(x0)
 
-
-|  n          |  \\(x_{n}\\)   |
-| ----------- |  -----------   |
-| 0           | 1              |
-| 1           | 0.54           |
-| 2           | 0.85           |
-| 3           | 0.65           |
-| 4           | 0.79           |
-| 5           | 0.70           |
+error=abs(x0-np.cos(x0))
+error
+  </script>
+</div>
 
