@@ -116,7 +116,7 @@ x_{0}=0
 \end{cases}
 $$
 
-نستعمل نظام SageMath لحساب بعض الحدود لهذه المتتالية
+نستعمل نظام SageMath لحساب بعض الحدود لهذه المتتالية (إضغط على "Evaluate" لترى النتيجة)
 
 <div class="sage">
   <script type="text/x-sage">
