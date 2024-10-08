@@ -138,6 +138,6 @@ print(f"error= {error}")
 
 <br>
 
-![cobweb_plot.png](/images/cobweb_plot.png){: style="float: center; 
+![cobweb_plot_page.jpg](/images/cobweb_plot_page.jpg){: style="float: center; 
 height: 85%; width: 85%; margin-left: 1em; margin-top: 2em;"}{:class="img-responsive"}
 
