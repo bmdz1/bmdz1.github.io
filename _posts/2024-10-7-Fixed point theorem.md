@@ -113,7 +113,10 @@ x_{0}=0
 \end{cases}
 $$
 
-
+| Syntax      | Description | Test Text     |
+| :---        |    :----:   |          ---: |
+| Header      | Title       | Here's this   |
+| Paragraph   | Text        | And more      |
 
 
 |  n          |  \\(x_{n}\\)   |
