@@ -121,7 +121,8 @@ $$
 <div class="sage">
   <script type="text/x-sage">
 import numpy as np
-x=0;n=10
+x=0; ### القيمة الإبتدائية x_0
+n=10 ### هو عدد الحدود n
 for i in range(0, n):
         x=np.cos(x);
         print(f"x_{i+1}= {x}")
