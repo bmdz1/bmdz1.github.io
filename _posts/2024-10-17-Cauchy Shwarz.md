@@ -79,6 +79,7 @@ $$
 
 # متباينة كوشي-شفارتس (التكاملية) 
 
+<br>
 
 $$
 \Big(\int_{a}^{b}\, f(x)\,g(x)\, dx\Big)^2\leq \Big(\int_{a}^{b}\, \big(f(x)\big)^2\,dx \Big)\Big(\int_{a}^{b}\, \big(g(x)\big)^2\,dx\Big)
