@@ -44,6 +44,7 @@ f(t) = A + 2Bt + Ct^2
 $$
 
 حيث:
+
 $$
 \begin{split}
 A &= \sum_{i=1}^{n} a_i^2 \\
