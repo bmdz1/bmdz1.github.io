@@ -107,3 +107,14 @@ $$
 &\geq t^2 A+2Bt+C\\
 \end{split}
 $$
+
+حيث
+
+$$
+\begin{split}
+A&=\int_{a}^{b}(f(x))^2 dx\\
+B&=2\int_{a}^{b}(f(x)g(x)) dx\\
+C&=\int_{a}^{b}(g(x))^2 dx\\
+\end{split}
+$$
+
