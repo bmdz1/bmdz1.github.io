@@ -104,6 +104,6 @@ $$
 \begin{split}
 0 &\geq \int_{a}^{b}(g(x) + t f(x))^2 dx\\
 &\geq t^2\int_{a}^{b}(f(x))^2 dx+2t\int_{a}^{b}(f(x)g(x)) dx+\int_{a}^{b}(g(x))^2 dx\\
-&\geq t^2 A+2tB+C\\
+&\geq t^2 A+2Bt+C\\
 \end{split}
 $$
