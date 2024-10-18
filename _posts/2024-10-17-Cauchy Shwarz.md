@@ -99,6 +99,7 @@ $$
 p(t) =  (g(x) + t f(x))^2\geq 0, \quad t\in\mathbb{R}
 $$
 
+بالمكاملة على المجال  \\( [a,b] \\)
 
 $$
 \begin{split}
