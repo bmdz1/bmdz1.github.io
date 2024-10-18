@@ -96,5 +96,14 @@ $$
 بنفس الطريقة يمكن إعتبار 
 
 $$
-p(t) =  (g(x) + t f(x))^2\geq 0, \quad x\in\mathbb{R}
+p(t) =  (g(x) + t f(x))^2\geq 0, \quad t\in\mathbb{R}
+$$
+
+
+$$
+\begin{split}
+0 &\geq \int_{a}^{b}(g(x) + t f(x))^2 dx\\
+&\geq t^2\int_{a}^{b}(f(x))^2 dx+2t\int_{a}^{b}(f(x)g(x)) dx+\int_{a}^{b}(g(x))^2 dx\\
+&\geq t^2 A+2tB+C\\
+\end{split}
 $$
