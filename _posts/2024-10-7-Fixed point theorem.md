@@ -30,7 +30,8 @@ $$
 
 \begin{equation}\label{p1}
 \begin{split}
-x_{n+1}=g(x_{n}),\, n\geq 0\\
+x_{n+1}=g(x_{n}),\, n\geq 0 \\
+
 x_{0}
 \end{split}
 \end{equation}
