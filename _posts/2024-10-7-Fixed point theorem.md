@@ -33,7 +33,7 @@ $$
 x_{n+1}=g(x_{n}),\, n\geq 0\\
 x_{0}
 \end{cases}
-\label{p1}
+ \tag{p1}
 $$
 
  بمتتالية التكرار بالنقطة الثابتة (Fixed Point Iteration )
