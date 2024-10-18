@@ -157,3 +157,28 @@ height: 80%; width: 90%; margin-left: 1em; margin-top: 2em;"}{:class="img-respon
 ![cobweb_plot_page.jpg](/images/cobweb_plot_page.jpg){: style="float: center; 
 height: 85%; width: 85%; margin-left: 1em; margin-top: 2em;"}{:class="img-responsive"}
 
+
+## نظرية باناخ للنقطة الثابتة
+
+
+ليكن \\(I\\) مجال مغلق من \\(\mathbb{R}\\) و لتكن
+
+
+$$
+\begin{split}
+g:I&\longrightarrow I\\
+x&\longrightarrow g(x)
+\end{split}
+$$
+
+دالة مستمرة، و لنفرض وجود عدد حقيقي \\(0<k<1 \\) حيث
+
+$$
+\forall x,y\in I, \quad |f(x)-f(y)|\leq k|x-y|
+$$
+
+هذا يعطينا النظرية التالية
+
+### نظرية:
+
+
