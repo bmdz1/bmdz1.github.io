@@ -29,8 +29,8 @@ $$
 نحافظ على نفس الرموز، و لتكن \\(x_{0}\in I\\)، نسمي المتتالية التالية 
 
 \begin{equation}\label{p1}
-\left{x_{n+1}=g(x_{n}),\, n\geq 0\\
-x_{0}
+\left{ \begin{split}x_{n+1}=g(x_{n}),\, n\geq 0\\
+x_{0}\end{split}
 \begin{equation}
 
 
