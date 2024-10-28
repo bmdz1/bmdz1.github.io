@@ -26,5 +26,6 @@ $$
  </div>
 
 
-
+![Riemann Sums.png](/images/Riemann Sums.png){: style="float: center; 
+height: 80%; width: 90%; margin-left: 1em; margin-top: 2em;"}{:class="img-responsive"}
 
