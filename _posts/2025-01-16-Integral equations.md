@@ -5,6 +5,6 @@ tag: Books
 ---
 
 
-[![PDF Preview](https://m.media-amazon.com/images/I/61ppjYJrQ1L._SL1400_.jpg)](https://drive.google.com/file/d/11XYaVqMfJLDnzVTDyNJHpP0Sj39OLJNX/view?usp=sharing)
+[![PDF Preview](https://www.booktopia.com.au/covers/900/9788120352803/0000/integral-equations.jpg)](https://drive.google.com/file/d/11XYaVqMfJLDnzVTDyNJHpP0Sj39OLJNX/view?usp=sharing)
 
 ## I will be adding more books here later
