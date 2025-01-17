@@ -6,6 +6,8 @@ tag: Books
 
 ## I will be adding more books here later
 
+[![PDF Preview](https://m.media-amazon.com/images/G/01/apparel/rcxgs/tile._CB483369110_.gif)](https://drive.google.com/file/d/14ohiOQnGXsR8OsOLgxDSppzsh8b69-L4/view?usp=sharing)
+
 [![PDF Preview](https://www.witpress.com/theme/Witpress/img/covers/978-1-84564-101-6/integral-equations-and-their-applications.jpg)](https://drive.google.com/file/d/1_sTJ34ykz5lEwoFnUyjVWRHgH4smVHve/view?usp=sharing)
 
 [![PDF Preview](https://www.booktopia.com.au/covers/900/9788120352803/0000/integral-equations.jpg)](https://drive.google.com/file/d/11XYaVqMfJLDnzVTDyNJHpP0Sj39OLJNX/view?usp=sharing)
