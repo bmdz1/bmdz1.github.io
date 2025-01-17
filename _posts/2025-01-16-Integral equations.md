@@ -6,7 +6,7 @@ tag: Books
 
 ## I will be adding more books here later
 
-[![PDF Preview](https://m.media-amazon.com/images/G/01/apparel/rcxgs/tile._CB483369110_.gif)](https://drive.google.com/file/d/14ohiOQnGXsR8OsOLgxDSppzsh8b69-L4/view?usp=sharing)
+[![PDF Preview](https://martinsfontespaulista.vteximg.com.br/arquivos/ids/1011835-800-800/500890_ampliada.jpg?v=637265713451670000)](https://drive.google.com/file/d/14ohiOQnGXsR8OsOLgxDSppzsh8b69-L4/view?usp=sharing)
 
 [![PDF Preview](https://www.witpress.com/theme/Witpress/img/covers/978-1-84564-101-6/integral-equations-and-their-applications.jpg)](https://drive.google.com/file/d/1_sTJ34ykz5lEwoFnUyjVWRHgH4smVHve/view?usp=sharing)
 
