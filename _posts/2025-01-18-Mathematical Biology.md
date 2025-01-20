@@ -6,7 +6,7 @@ tag: Books
 
 | Book 1 | Book 2 | Book 3 | Book 4 |
 |--------|--------|--------|--------|
-| [![PDF Preview](https://images.tandf.co.uk/common/jackets/crclarge/978100329/9781003298663.jpg)](https://drive.google.com/file/d/1gCohb-TS898W3MHrMQl6-hLRLny8m9d-/view?usp=sharing) | [![PDF Preview](https://media.springernature.com/lw150/springer-static/cover-hires/book/978-981-19-8257-6?as=webp)](https://drive.google.com/file/d/1TNC4NPEcYxlQTFyaV5dByOkxYPlcQ4LY/view?usp=sharing) | [![PDF Preview](https://media.springernature.com/w316/springer-static/cover-hires/book/978-1-4614-1686-9?as=webp)](https://drive.google.com/file/d/1dQRv0jBkpeo-p38K7bcdDo2Xz2MKwfoP/view?usp=sharing) | [![PDF Preview](https://media.springernature.com/w316/springer-static/cover-hires/book/978-3-031-40258-6?as=webp)](https://drive.google.com/file/d/1zHpKoWYW7Xk2eRWJN8LDds-naekZYCJb/view?usp=sharing) | 
+| [![PDF Preview](https://images.tandf.co.uk/common/jackets/crclarge/978100329/9781003298663.jpg)](https://drive.google.com/file/d/1gCohb-TS898W3MHrMQl6-hLRLny8m9d-/view?usp=sharing) | [![PDF Preview](https://media.springernature.com/lw150/springer-static/cover-hires/book/978-981-19-8257-6?as=webp)](https://drive.google.com/file/d/1TNC4NPEcYxlQTFyaV5dByOkxYPlcQ4LY/view?usp=sharing) | [![PDF Preview](https://media.springernature.com/w316/springer-static/cover-hires/book/978-1-4614-1686-9?as=webp)](https://drive.google.com/file/d/1dQRv0jBkpeo-p38K7bcdDo2Xz2MKwfoP/view?usp=sharing) | [![PDF Preview](https://media.springernature.com/w316/springer-static/cover-hires/book/978-3-642-22664-9?as=webp)](https://drive.google.com/file/d/1zHpKoWYW7Xk2eRWJN8LDds-naekZYCJb/view?usp=sharing) | 
 
 
 
