@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Classroom companion : Economics
+title: Classroom companion Economics
 tag: Books
 ---
 
