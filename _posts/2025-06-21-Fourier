@@ -1,289 +1,98 @@
 ---
 layout: post
-title: فورير
-tag: جبر
+title: هل تعلم؟ سلاسل فورييه
+tag: تحليل
 ---
 
+![Fourier Series](/images/fourier-series.png){: style="float: center; height: 85%; width: 85%; margin-left: 1em; margin-top: 2em;"}{:class="img-responsive"}
 
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>هل تعلم؟ - Fourier Series</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<br>
 
-        .thumbnail {
-            width: 1280px;
-            height: 720px;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            position: relative;
-            overflow: hidden;
-            font-family: 'Arial', sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+**هل تعلم** أن أي دالة دورية يمكن التعبير عنها كمجموع لا نهائي من الدوال المثلثية؟
 
-        .wave-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.3;
-        }
+<br>
 
-        .wave {
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #00d4ff, transparent);
-            animation: wave 3s ease-in-out infinite;
-        }
+سلاسل فورييه هي إحدى أهم الأدوات في الرياضيات التطبيقية والهندسة. تسمح لنا بتفكيك الإشارات المعقدة إلى مكونات بسيطة.
 
-        .wave:nth-child(1) {
-            top: 30%;
-            animation-delay: 0s;
-        }
+<br>
 
-        .wave:nth-child(2) {
-            top: 40%;
-            animation-delay: 0.5s;
-            background: linear-gradient(90deg, transparent, #ff6b6b, transparent);
-        }
+## التعريف الأساسي
 
-        .wave:nth-child(3) {
-            top: 50%;
-            animation-delay: 1s;
-            background: linear-gradient(90deg, transparent, #4ecdc4, transparent);
-        }
+لدالة دورية \\(f(x)\\) بدورة \\(2\pi\\)، يمكن كتابة سلسلة فورييه كالتالي:
 
-        .wave:nth-child(4) {
-            top: 60%;
-            animation-delay: 1.5s;
-            background: linear-gradient(90deg, transparent, #45b7d1, transparent);
-        }
+<br>
 
-        .wave:nth-child(5) {
-            top: 70%;
-            animation-delay: 2s;
-            background: linear-gradient(90deg, transparent, #96ceb4, transparent);
-        }
+$$
+f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty} \left( a_n \cos(nx) + b_n \sin(nx) \right)
+$$
 
-        @keyframes wave {
-            0%, 100% {
-                transform: translateX(-100%) scaleY(1);
-            }
-            50% {
-                transform: translateX(100%) scaleY(3);
-            }
-        }
+<br>
 
-        .mathematical-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.1;
-            background-image: 
-                radial-gradient(circle at 20% 20%, #00d4ff 2px, transparent 2px),
-                radial-gradient(circle at 80% 80%, #ff6b6b 2px, transparent 2px),
-                radial-gradient(circle at 40% 60%, #4ecdc4 1px, transparent 1px);
-            background-size: 50px 50px, 60px 60px, 30px 30px;
-            animation: float 6s ease-in-out infinite;
-        }
+حيث المعاملات تُحسب بالصيغ:
 
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
+<br>
 
-        .main-text {
-            text-align: center;
-            z-index: 10;
-            position: relative;
-        }
+$$
+\begin{split}
+a_0 &= \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \, dx \\
+a_n &= \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos(nx) \, dx \\
+b_n &= \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin(nx) \, dx
+\end{split}
+$$
 
-        .title-arabic {
-            font-size: 120px;
-            font-weight: 900;
-            color: #ffffff;
-            text-shadow: 
-                0 0 20px rgba(0, 212, 255, 0.8),
-                0 0 40px rgba(0, 212, 255, 0.6),
-                0 0 60px rgba(0, 212, 255, 0.4),
-                3px 3px 0px #1a1a2e,
-                6px 6px 0px rgba(26, 26, 46, 0.8);
-            margin-bottom: 20px;
-            animation: glow 2s ease-in-out infinite alternate;
-            letter-spacing: 5px;
-        }
+<br>
 
-        .subtitle {
-            font-size: 48px;
-            font-weight: 700;
-            color: #00d4ff;
-            text-shadow: 
-                0 0 10px rgba(0, 212, 255, 0.8),
-                2px 2px 0px #1a1a2e,
-                4px 4px 0px rgba(26, 26, 46, 0.6);
-            margin-bottom: 15px;
-            animation: pulse 1.5s ease-in-out infinite;
-        }
+## مثال: الموجة المربعة
 
-        .fourier-text {
-            font-size: 36px;
-            font-weight: 600;
-            color: #ff6b6b;
-            text-shadow: 
-                0 0 10px rgba(255, 107, 107, 0.6),
-                2px 2px 0px #1a1a2e;
-            animation: slideIn 1s ease-out;
-        }
+للموجة المربعة المعرفة كالتالي:
 
-        @keyframes glow {
-            from {
-                text-shadow: 
-                    0 0 20px rgba(0, 212, 255, 0.8),
-                    0 0 40px rgba(0, 212, 255, 0.6),
-                    0 0 60px rgba(0, 212, 255, 0.4),
-                    3px 3px 0px #1a1a2e,
-                    6px 6px 0px rgba(26, 26, 46, 0.8);
-            }
-            to {
-                text-shadow: 
-                    0 0 30px rgba(0, 212, 255, 1),
-                    0 0 50px rgba(0, 212, 255, 0.8),
-                    0 0 70px rgba(0, 212, 255, 0.6),
-                    3px 3px 0px #1a1a2e,
-                    6px 6px 0px rgba(26, 26, 46, 0.8);
-            }
-        }
+<br>
 
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-        }
+$$
+f(x) = \begin{cases}
+1 & \text{إذا } 0 < x < \pi \\
+-1 & \text{إذا } -\pi < x < 0
+\end{cases}
+$$
 
-        @keyframes slideIn {
-            from {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
+<br>
 
-        .corner-accent {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            border: 3px solid #00d4ff;
-            border-radius: 50%;
-            opacity: 0.3;
-        }
+نجد أن سلسلة فورييه هي:
 
-        .corner-accent.top-left {
-            top: -100px;
-            left: -100px;
-            animation: rotate 8s linear infinite;
-        }
+<br>
 
-        .corner-accent.bottom-right {
-            bottom: -100px;
-            right: -100px;
-            animation: rotate 8s linear infinite reverse;
-        }
+$$
+f(x) = \frac{4}{\pi} \sum_{n=1,3,5,...}^{\infty} \frac{\sin(nx)}{n} = \frac{4}{\pi} \left( \sin x + \frac{\sin 3x}{3} + \frac{\sin 5x}{5} + \cdots \right)
+$$
 
-        @keyframes rotate {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
+<br>
 
-        .formula-hint {
-            position: absolute;
-            bottom: 50px;
-            right: 50px;
-            font-size: 24px;
-            color: rgba(255, 255, 255, 0.6);
-            font-family: 'Courier New', monospace;
-            animation: fadeInOut 3s ease-in-out infinite;
-        }
+## الصيغة المركبة
 
-        @keyframes fadeInOut {
-            0%, 100% {
-                opacity: 0.3;
-            }
-            50% {
-                opacity: 0.8;
-            }
-        }
+يمكن أيضاً كتابة سلسلة فورييه بالصيغة المركبة:
 
-        .question-mark {
-            position: absolute;
-            top: 80px;
-            left: 80px;
-            font-size: 180px;
-            color: rgba(255, 107, 107, 0.2);
-            font-weight: 900;
-            animation: bounce 2s ease-in-out infinite;
-        }
+<br>
 
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="thumbnail">
-        <div class="mathematical-bg"></div>
-        
-        <div class="wave-container">
-            <div class="wave"></div>
-            <div class="wave"></div>
-            <div class="wave"></div>
-            <div class="wave"></div>
-            <div class="wave"></div>
-        </div>
+$$
+f(x) = \sum_{n=-\infty}^{\infty} c_n e^{inx}
+$$
 
-        <div class="question-mark">؟</div>
-        
-        <div class="corner-accent top-left"></div>
-        <div class="corner-accent bottom-right"></div>
-        
-        <div class="main-text">
-            <div class="title-arabic">هل تعلم؟</div>
-            <div class="subtitle">سلاسل فورييه</div>
-            <div class="fourier-text">Fourier Series</div>
-        </div>
-        
-        <div class="formula-hint">f(x) = Σ aₙsin(nx)</div>
-    </div>
-</body>
-</html>
+<br>
+
+حيث:
+
+<br>
+
+$$
+c_n = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x) e^{-inx} \, dx
+$$
+
+<br>
+
+هذه الصيغة تربط سلاسل فورييه بتحويل فورييه، مما يفتح المجال لتطبيقات واسعة في معالجة الإشارات والفيزياء الرياضية.
+
+<br>
+
+---
+
+*💡 **نصيحة**: سلاسل فورييه ليست مجرد أداة رياضية، بل هي أساس فهم كيفية عمل الموسيقى الرقمية، ضغط الصور، ومعالجة الإشارات!*
