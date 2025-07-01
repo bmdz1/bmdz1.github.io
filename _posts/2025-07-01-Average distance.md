@@ -98,9 +98,4 @@ print(monte_carlo_average_distance(1000))
 Figures, The College Mathematics Journal, 28:3, 187-197
 2. **[Resource 2]** - Mathai A. M. An Introduction to Geometrical Probability: Distributional Aspects with Applications. Newark: Gordon and Breach, 1999.
 
-
-### روابط ذات صلة
-- [يمكنك إضافة روابط ذات صلة هنا]
-- [مثال: مسائل أخرى في الهندسة العشوائية]
-
 <br>
