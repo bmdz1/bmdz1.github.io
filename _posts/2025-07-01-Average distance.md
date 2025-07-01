@@ -94,9 +94,10 @@ print(monte_carlo_average_distance(1000))
 
 ## مراجع وموارد إضافية
 
-1. **[Resource 1]** - [يمكنك إضافة المرجع الأول هنا]
-2. **[Resource 2]** - [يمكنك إضافة المرجع الثاني هنا]
-3. **[Resource 3]** - [يمكنك إضافة المرجع الثالث هنا]
+1. **[Resource 1]** - Steven R. Dunbar (1997) The Average Distance Between Points in Geometric
+Figures, The College Mathematics Journal, 28:3, 187-197
+2. **[Resource 2]** - Mathai A. M. An Introduction to Geometrical Probability: Distributional Aspects with Applications. Newark: Gordon and Breach, 1999.
+
 
 ### روابط ذات صلة
 - [يمكنك إضافة روابط ذات صلة هنا]
