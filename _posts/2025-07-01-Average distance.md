@@ -66,6 +66,7 @@ def monte_carlo_average_distance(n_simulations):
         total_distance += distance
     
     return total_distance / n_simulations
+print(monte_carlo_average_distance(1000))
 ```
 
 ### دقة التقدير
