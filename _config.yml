@@ -72,6 +72,7 @@ kramdown:
     css_class: "highlight"
 
 plugins:
+  - jekyll-feed
   - jekyll-seo-tag
 # Set the Sass partials directory, as we're using @imports
 
