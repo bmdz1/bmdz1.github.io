@@ -28,7 +28,7 @@ footer-links:
   instagram:
   linkedin:
   pinterest:
-  rss: # ضع أي قيمة هنا لتظهر أيقونة RSS
+  rss: true
   twitter: 
   stackoverflow: # هويتك في stackoverflow مثلا: "users/50476/bart-kiers"
   googleplus: # رقم التعريف عندما تزور هويتك (كل ما يتبع plus.google.com/)
