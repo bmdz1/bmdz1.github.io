@@ -27,13 +27,13 @@ $$
 ثم معاملات الجيب تمام (cosine):
 
 $$
-a_n=\frac{1}{\pi}\int_{-\pi}^{\pi} x^2 \cos(nx) \, dx= \frac{2}{\pi}\int_0^{\pi} x^2 \cos(nx) \, dx
+a_n=\frac{1}{\pi}\int_{-\pi}^{\pi} x^2 \cos(nx) \, dx= \frac{2}{\pi}\int_0^{\pi} x^2 \cos(nx) \, dx, n\geq 1
 $$
 
 وباستخدام التكامل بالأجزاء نحصل على:
 
 $$
-a_n=\frac{(-1)^n4}{n^2}
+a_n=\frac{(-1)^n4}{n^2}, \quad n\geq 1
 $$
 
 لاحظ أن الدالة $x^2$ زوجية، مما يعني جميع معاملات الجيب (sine) هي صفر:
