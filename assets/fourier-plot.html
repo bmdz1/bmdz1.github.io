@@ -114,7 +114,7 @@
             }
             
             // Horizontal grid lines
-            for (let i = 120; i <= 270; i += 30) {
+            for (let i = 90; i <= 306; i += 36) {
                 ctx.beginPath();
                 ctx.moveTo(90, i);
                 ctx.lineTo(630, i);
@@ -125,16 +125,16 @@
             ctx.strokeStyle = '#333';
             ctx.lineWidth = 2;
             
-            // X axis
+            // X axis (y=0 line)
             ctx.beginPath();
-            ctx.moveTo(90, 270);
-            ctx.lineTo(630, 270);
+            ctx.moveTo(90, 238.4);
+            ctx.lineTo(630, 238.4);
             ctx.stroke();
             
             // Y axis
             ctx.beginPath();
             ctx.moveTo(360, 90);
-            ctx.lineTo(360, 270);
+            ctx.lineTo(360, 306);
             ctx.stroke();
             
             // Axis labels
@@ -143,18 +143,19 @@
             ctx.textAlign = 'center';
             
             // X-axis labels
-            ctx.fillText('-2', 105, 288);
-            ctx.fillText('-1', 225, 288);
-            ctx.fillText('0', 360, 288);
-            ctx.fillText('1', 495, 288);
-            ctx.fillText('2', 615, 288);
+            ctx.fillText('-2', 105, 256);
+            ctx.fillText('-1', 225, 256);
+            ctx.fillText('0', 360, 256);
+            ctx.fillText('1', 495, 256);
+            ctx.fillText('2', 615, 256);
             
             // Y-axis labels
             ctx.textAlign = 'right';
-            ctx.fillText('1.5', 348, 96);
-            ctx.fillText('1', 348, 156);
-            ctx.fillText('0.5', 348, 216);
-            ctx.fillText('0', 348, 276);
+            ctx.fillText('1.4', 348, 96);
+            ctx.fillText('1.0', 348, 126.4);
+            ctx.fillText('0.5', 348, 156);
+            ctx.fillText('0', 348, 244);
+            ctx.fillText('-0.4', 348, 310);
         }
 
         function originalFunction(x) {
@@ -188,7 +189,7 @@
             for (let px = 90; px <= 630; px += 1) {
                 const x = ((px - 360) / 135); // Scale: 135px = 1 unit
                 const y = originalFunction(x);
-                const py = 270 - y * 120; // Scale: 120px = 1 unit, y=0 at bottom
+                const py = 238.4 - y * 120; // y=0 at 238.4, scale: 120px = 1 unit
                 
                 if (first) {
                     ctx.moveTo(px, py);
@@ -208,9 +209,9 @@
             for (let px = 90; px <= 630; px += 1) {
                 const x = ((px - 360) / 135);
                 const y = fourierSum(x, m);
-                const py = 270 - y * 120;
+                const py = 238.4 - y * 120; // y=0 at 238.4
                 
-                if (py >= 90 && py <= 270) { // Only draw within visible bounds
+                if (py >= 90 && py <= 306) { // Only draw within visible bounds
                     if (first) {
                         ctx.moveTo(px, py);
                         first = false;
