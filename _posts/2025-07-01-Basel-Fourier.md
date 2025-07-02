@@ -77,3 +77,9 @@ $$
 $$
 
 وهكذا أثبتنا مسألة بازل باستخدام متسلسلة فورييه!
+
+---
+
+## مراجع
+
+1. [Tim Hsu, Fourier Transforms, and Function Spaces: A Second Course in Analysis, AMS, 2023.](https://drive.google.com/file/d/1DSv-Fll8aAYuCXl-z4nJyXJZm-PHd38v/view?usp=sharing)
