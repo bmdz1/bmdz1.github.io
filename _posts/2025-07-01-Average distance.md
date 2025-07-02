@@ -2,6 +2,7 @@
 layout: post
 title: متوسط المسافة بين نقطتين عشوائيتين في مربع 
 tag: احتماليات
+author: Bachir
 ---
 <br>
 
