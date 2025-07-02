@@ -73,7 +73,7 @@
             </div>
         </div>
         
-        <canvas id="canvas" width="600" height="300"></canvas>
+        <canvas id="canvas" width="720" height="360"></canvas>
         
         <div class="legend">
             <div style="margin: 5px 0;">
@@ -106,18 +106,18 @@
             ctx.lineWidth = 0.5;
             
             // Vertical grid lines
-            for (let i = 75; i <= 525; i += 112.5) {
+            for (let i = 90; i <= 630; i += 135) {
                 ctx.beginPath();
-                ctx.moveTo(i, 50);
-                ctx.lineTo(i, 250);
+                ctx.moveTo(i, 60);
+                ctx.lineTo(i, 300);
                 ctx.stroke();
             }
             
             // Horizontal grid lines
-            for (let i = 100; i <= 225; i += 25) {
+            for (let i = 120; i <= 270; i += 30) {
                 ctx.beginPath();
-                ctx.moveTo(75, i);
-                ctx.lineTo(525, i);
+                ctx.moveTo(90, i);
+                ctx.lineTo(630, i);
                 ctx.stroke();
             }
             
@@ -127,14 +127,14 @@
             
             // X axis
             ctx.beginPath();
-            ctx.moveTo(75, 225);
-            ctx.lineTo(525, 225);
+            ctx.moveTo(90, 270);
+            ctx.lineTo(630, 270);
             ctx.stroke();
             
             // Y axis
             ctx.beginPath();
-            ctx.moveTo(300, 75);
-            ctx.lineTo(300, 225);
+            ctx.moveTo(360, 90);
+            ctx.lineTo(360, 270);
             ctx.stroke();
             
             // Axis labels
@@ -143,18 +143,18 @@
             ctx.textAlign = 'center';
             
             // X-axis labels
-            ctx.fillText('-2', 87.5, 240);
-            ctx.fillText('-1', 187.5, 240);
-            ctx.fillText('0', 300, 240);
-            ctx.fillText('1', 412.5, 240);
-            ctx.fillText('2', 512.5, 240);
+            ctx.fillText('-2', 105, 288);
+            ctx.fillText('-1', 225, 288);
+            ctx.fillText('0', 360, 288);
+            ctx.fillText('1', 495, 288);
+            ctx.fillText('2', 615, 288);
             
             // Y-axis labels
             ctx.textAlign = 'right';
-            ctx.fillText('1.5', 290, 80);
-            ctx.fillText('1', 290, 130);
-            ctx.fillText('0.5', 290, 180);
-            ctx.fillText('0', 290, 230);
+            ctx.fillText('1.5', 348, 96);
+            ctx.fillText('1', 348, 156);
+            ctx.fillText('0.5', 348, 216);
+            ctx.fillText('0', 348, 276);
         }
 
         function originalFunction(x) {
@@ -185,10 +185,10 @@
             ctx.beginPath();
             
             let first = true;
-            for (let px = 75; px <= 525; px += 1) {
-                const x = ((px - 300) / 112.5); // Scale: 112.5px = 1 unit
+            for (let px = 90; px <= 630; px += 1) {
+                const x = ((px - 360) / 135); // Scale: 135px = 1 unit
                 const y = originalFunction(x);
-                const py = 225 - y * 100; // Scale: 100px = 1 unit, y=0 at bottom
+                const py = 270 - y * 120; // Scale: 120px = 1 unit, y=0 at bottom
                 
                 if (first) {
                     ctx.moveTo(px, py);
@@ -205,12 +205,12 @@
             ctx.beginPath();
             
             first = true;
-            for (let px = 75; px <= 525; px += 1) {
-                const x = ((px - 300) / 112.5);
+            for (let px = 90; px <= 630; px += 1) {
+                const x = ((px - 360) / 135);
                 const y = fourierSum(x, m);
-                const py = 225 - y * 100;
+                const py = 270 - y * 120;
                 
-                if (py >= 75 && py <= 225) { // Only draw within visible bounds
+                if (py >= 90 && py <= 270) { // Only draw within visible bounds
                     if (first) {
                         ctx.moveTo(px, py);
                         first = false;
