@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>سلاسل فورير</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 20px; 
+            text-align: center;
+        }
+        canvas { 
+            border: 1px solid #ccc; 
+            margin: 10px;
+        }
+        .controls {
+            margin: 20px 0;
+        }
+        h3 {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>تقريب سلسلة فورير</h2>
+    
+    <div class="controls">
+        <label>عدد الحدود: <span id="value">5</span></label><br>
+        <input type="range" id="slider" min="1" max="50" value="5">
+    </div>
+    
+    <canvas id="canvas" width="600" height="400"></canvas>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const slider = document.getElementById('slider');
+        const valueSpan = document.getElementById('value');
+
+        function drawAxes() {
+            ctx.strokeStyle = '#000';
+            ctx.lineWidth = 1;
+            
+            // X axis
+            ctx.beginPath();
+            ctx.moveTo(50, 200);
+            ctx.lineTo(550, 200);
+            ctx.stroke();
+            
+            // Y axis
+            ctx.beginPath();
+            ctx.moveTo(300, 50);
+            ctx.lineTo(300, 350);
+            ctx.stroke();
+            
+            // Labels
+            ctx.fillStyle = '#000';
+            ctx.font = '12px Arial';
+            ctx.fillText('-2', 75, 215);
+            ctx.fillText('-1', 175, 215);
+            ctx.fillText('0', 295, 215);
+            ctx.fillText('1', 425, 215);
+            ctx.fillText('2', 525, 215);
+            ctx.fillText('1', 310, 100);
+            ctx.fillText('0', 310, 205);
+        }
+
+        function originalFunction(x) {
+            const xMod = ((x + 1) % 2) - 1;
+            return xMod <= 0 ? 0 : 1;
+        }
+
+        function fourierSum(x, m) {
+            let sum = 0.5;
+            for (let n = 1; n <= m; n += 2) {
+                sum += (2 / (n * Math.PI)) * Math.sin(n * Math.PI * x);
+            }
+            return sum;
+        }
+
+        function plot() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawAxes();
+            
+            const m = parseInt(slider.value);
+            
+            // Plot original function (red)
+            ctx.strokeStyle = '#ff0000';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            let first = true;
+            for (let px = 50; px <= 550; px += 2) {
+                const x = (px - 300) / 125; // Scale: 125px = 1 unit
+                const y = originalFunction(x);
+                const py = 200 - y * 100; // Scale: 100px = 1 unit
+                
+                if (first) {
+                    ctx.moveTo(px, py);
+                    first = false;
+                } else {
+                    ctx.lineTo(px, py);
+                }
+            }
+            ctx.stroke();
+            
+            // Plot Fourier approximation (blue)
+            ctx.strokeStyle = '#0066cc';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            first = true;
+            for (let px = 50; px <= 550; px += 1) {
+                const x = (px - 300) / 125;
+                const y = fourierSum(x, m);
+                const py = 200 - y * 100;
+                
+                if (first) {
+                    ctx.moveTo(px, py);
+                    first = false;
+                } else {
+                    ctx.lineTo(px, py);
+                }
+            }
+            ctx.stroke();
+            
+            // Legend
+            ctx.fillStyle = '#ff0000';
+            ctx.fillRect(450, 60, 15, 3);
+            ctx.fillStyle = '#000';
+            ctx.fillText('الدالة الأصلية', 470, 65);
+            
+            ctx.fillStyle = '#0066cc';
+            ctx.fillRect(450, 80, 15, 3);
+            ctx.fillStyle = '#000';
+            ctx.fillText(`تقريب فورير (m=${m})`, 470, 85);
+        }
+
+        slider.addEventListener('input', function() {
+            valueSpan.textContent = this.value;
+            plot();
+        });
+
+        // Initial plot
+        plot();
+    </script>
+</body>
+</html>
