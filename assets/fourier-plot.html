@@ -1,103 +1,188 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>سلاسل فورير</title>
     <style>
         body { 
-            font-family: Arial, sans-serif; 
+            font-family: 'Arial', 'Tahoma', sans-serif; 
             margin: 20px; 
             text-align: center;
+            direction: rtl;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         canvas { 
-            border: 1px solid #ccc; 
+            border: 2px solid #ddd; 
             margin: 10px;
+            border-radius: 5px;
+            background: white;
         }
         .controls {
             margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        .slider-container {
+            margin: 10px 0;
+        }
+        input[type="range"] {
+            width: 300px;
+            margin: 10px;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
         }
         h3 {
             margin: 5px 0;
+            color: #666;
+        }
+        .value-display {
+            font-size: 18px;
+            font-weight: bold;
+            color: #0066cc;
+        }
+        .legend {
+            text-align: right;
+            margin: 10px;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-    <h2>تقريب سلسلة فورير</h2>
-    
-    <div class="controls">
-        <label>عدد الحدود: <span id="value">5</span></label><br>
-        <input type="range" id="slider" min="1" max="50" value="5">
+    <div class="container">
+        <h2>تقريب سلسلة فورير</h2>
+        
+        <div class="controls">
+            <div class="slider-container">
+                <label>عدد الحدود: <span id="value" class="value-display">5</span></label><br>
+                <input type="range" id="slider" min="1" max="50" value="5">
+            </div>
+        </div>
+        
+        <canvas id="canvas" width="700" height="450"></canvas>
+        
+        <div class="legend">
+            <div style="margin: 5px 0;">
+                <span style="display: inline-block; width: 20px; height: 3px; background: #ff0000; margin-left: 10px;"></span>
+                الدالة الأصلية
+            </div>
+            <div style="margin: 5px 0;">
+                <span style="display: inline-block; width: 20px; height: 3px; background: #0066cc; margin-left: 10px;"></span>
+                <span id="legend-text">تقريب فورير (m=5)</span>
+            </div>
+        </div>
     </div>
-    
-    <canvas id="canvas" width="600" height="400"></canvas>
 
     <script>
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
         const slider = document.getElementById('slider');
         const valueSpan = document.getElementById('value');
+        const legendText = document.getElementById('legend-text');
 
         function drawAxes() {
-            ctx.strokeStyle = '#000';
+            ctx.strokeStyle = '#333';
             ctx.lineWidth = 1;
+            
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Grid lines
+            ctx.strokeStyle = '#e0e0e0';
+            ctx.lineWidth = 0.5;
+            
+            // Vertical grid lines
+            for (let i = 75; i <= 625; i += 125) {
+                ctx.beginPath();
+                ctx.moveTo(i, 75);
+                ctx.lineTo(i, 375);
+                ctx.stroke();
+            }
+            
+            // Horizontal grid lines
+            for (let i = 125; i <= 325; i += 50) {
+                ctx.beginPath();
+                ctx.moveTo(75, i);
+                ctx.lineTo(625, i);
+                ctx.stroke();
+            }
+            
+            // Main axes
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = 2;
             
             // X axis
             ctx.beginPath();
-            ctx.moveTo(50, 200);
-            ctx.lineTo(550, 200);
+            ctx.moveTo(75, 225);
+            ctx.lineTo(625, 225);
             ctx.stroke();
             
             // Y axis
             ctx.beginPath();
-            ctx.moveTo(300, 50);
-            ctx.lineTo(300, 250);
+            ctx.moveTo(350, 75);
+            ctx.lineTo(350, 375);
             ctx.stroke();
             
-            // Labels
-            ctx.fillStyle = '#000';
+            // Axis labels
+            ctx.fillStyle = '#333';
             ctx.font = '12px Arial';
-            ctx.fillText('-2', 75, 215);
-            ctx.fillText('-1', 175, 215);
-            ctx.fillText('0', 295, 215);
-            ctx.fillText('1', 425, 215);
-            ctx.fillText('2', 525, 215);
-            ctx.fillText('1', 310, 100);
-            ctx.fillText('0', 310, 205);
+            ctx.textAlign = 'center';
+            
+            // X-axis labels
+            ctx.fillText('-2π', 100, 245);
+            ctx.fillText('-π', 225, 245);
+            ctx.fillText('0', 350, 245);
+            ctx.fillText('π', 475, 245);
+            ctx.fillText('2π', 600, 245);
+            
+            // Y-axis labels
+            ctx.textAlign = 'right';
+            ctx.fillText('1', 340, 130);
+            ctx.fillText('0.5', 340, 180);
+            ctx.fillText('0', 340, 230);
+            ctx.fillText('-0.5', 340, 280);
         }
 
         function originalFunction(x) {
-            // Period is 2, so map x to [-1, 1] interval
-            let xMod = x % 2;
-            if (xMod > 1) xMod -= 2;
-            if (xMod < -1) xMod += 2;
-            
-            // f(x) = 0 for -1 < x <= 0, f(x) = 1 for 0 < x <= 1
-            return (xMod > -1 && xMod <= 0) ? 0 : 1;
+            // Square wave function with period 2π
+            const xMod = ((x % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
+            return (xMod < Math.PI) ? 1 : -1;
         }
 
         function fourierSum(x, m) {
-            let sum = 0.5;
+            let sum = 0;
             for (let n = 1; n <= m; n += 2) {
-                sum += (2 / (n * Math.PI)) * Math.sin(n * Math.PI * x);
+                sum += (4 / (n * Math.PI)) * Math.sin(n * x);
             }
             return sum;
         }
 
         function plot() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
             drawAxes();
             
             const m = parseInt(slider.value);
             
             // Plot original function (red)
             ctx.strokeStyle = '#ff0000';
-            ctx.lineWidth = 2;
+            ctx.lineWidth = 3;
             ctx.beginPath();
+            
             let first = true;
-            for (let px = 50; px <= 550; px += 2) {
-                const x = (px - 300) / 125; // Scale: 125px = 1 unit
+            for (let px = 75; px <= 625; px += 1) {
+                const x = ((px - 350) / 125) * Math.PI; // Scale: 125px = π units
                 const y = originalFunction(x);
-                const py = 200 - y * 100; // Scale: 100px = 1 unit
+                const py = 225 - y * 100; // Scale: 100px = 1 unit
                 
                 if (first) {
                     ctx.moveTo(px, py);
@@ -112,38 +197,44 @@
             ctx.strokeStyle = '#0066cc';
             ctx.lineWidth = 2;
             ctx.beginPath();
+            
             first = true;
-            for (let px = 50; px <= 550; px += 1) {
-                const x = (px - 300) / 125;
+            for (let px = 75; px <= 625; px += 1) {
+                const x = ((px - 350) / 125) * Math.PI;
                 const y = fourierSum(x, m);
-                const py = 200 - y * 100;
+                const py = 225 - y * 100;
                 
-                if (first) {
-                    ctx.moveTo(px, py);
-                    first = false;
-                } else {
-                    ctx.lineTo(px, py);
+                if (py >= 75 && py <= 375) { // Only draw within canvas bounds
+                    if (first) {
+                        ctx.moveTo(px, py);
+                        first = false;
+                    } else {
+                        ctx.lineTo(px, py);
+                    }
                 }
             }
             ctx.stroke();
-            
-            // Legend
-            ctx.fillStyle = '#ff0000';
-            ctx.fillRect(450, 60, 15, 3);
-            ctx.fillStyle = '#000';
-            ctx.fillText('الدالة الأصلية', 470, 65);
-            
-            ctx.fillStyle = '#0066cc';
-            ctx.fillRect(450, 80, 15, 3);
-            ctx.fillStyle = '#000';
-            ctx.fillText(`تقريب فورير (m=${m})`, 470, 85);
         }
 
         slider.addEventListener('input', function() {
-            valueSpan.textContent = this.value;
+            const value = this.value;
+            valueSpan.textContent = value;
+            legendText.textContent = `تقريب فورير (m=${value})`;
             plot();
         });
 
+        // Handle canvas resize
+        function resizeCanvas() {
+            const container = canvas.parentElement;
+            const containerWidth = container.clientWidth - 40;
+            if (containerWidth < 700) {
+                canvas.width = containerWidth;
+                canvas.height = (containerWidth / 700) * 450;
+            }
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        
         // Initial plot
         plot();
     </script>
