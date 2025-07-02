@@ -52,7 +52,7 @@ $$
 x^2=\frac{\pi^2}{3}+\sum_{n=1}^{\infty}\frac{4(-1)^n}{n^2}\cos(nx)
 $$
 
-شروط التقارب متحققة في كل نقطة، شرط ديني Dini على سبيل المثال 
+شروط التقارب متحققة في كل نقطة، يمكن إستعمال النظرية في الصفحة 75 من كتاب Tolstov  
 
 <br>
 
@@ -82,4 +82,4 @@ $$
 
 ## مراجع
 
-1. [Tim Hsu, Fourier Transforms, and Function Spaces: A Second Course in Analysis, AMS, 2023.](https://drive.google.com/file/d/1DSv-Fll8aAYuCXl-z4nJyXJZm-PHd38v/view?usp=sharing)
+1. [Georgi P. Tolstov .Fourier Series, Dover,1976  ](https://drive.google.com/file/d/1GSpVN5akkU-vfUAb8U4bKBefU_D5aEeB/view?usp=sharing)
