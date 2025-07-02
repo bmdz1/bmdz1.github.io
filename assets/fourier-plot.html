@@ -7,41 +7,44 @@
     <style>
         body { 
             font-family: 'Arial', 'Tahoma', sans-serif; 
-            margin: 20px; 
+            margin: 0;
+            padding: 10px;
             text-align: center;
             direction: rtl;
-            background-color: #f5f5f5;
+            background-color: white;
+            overflow: hidden;
         }
         .container {
-            max-width: 800px;
-            margin: 0 auto;
+            width: 100%;
+            height: 100%;
             background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 0;
+            margin: 0;
         }
         canvas { 
-            border: 2px solid #ddd; 
-            margin: 10px;
-            border-radius: 5px;
+            border: 1px solid #ddd; 
+            margin: 5px 0;
+            border-radius: 3px;
             background: white;
+            display: block;
         }
         .controls {
-            margin: 20px 0;
-            padding: 15px;
+            margin: 10px 0;
+            padding: 8px;
             background: #f8f9fa;
-            border-radius: 5px;
+            border-radius: 3px;
         }
         .slider-container {
-            margin: 10px 0;
+            margin: 5px 0;
         }
         input[type="range"] {
-            width: 300px;
-            margin: 10px;
+            width: 200px;
+            margin: 5px;
         }
         h2 {
             color: #333;
-            margin-bottom: 20px;
+            margin: 5px 0 10px 0;
+            font-size: 18px;
         }
         h3 {
             margin: 5px 0;
@@ -54,8 +57,8 @@
         }
         .legend {
             text-align: right;
-            margin: 10px;
-            font-size: 14px;
+            margin: 5px;
+            font-size: 12px;
         }
     </style>
 </head>
@@ -70,7 +73,7 @@
             </div>
         </div>
         
-        <canvas id="canvas" width="700" height="450"></canvas>
+        <canvas id="canvas" width="600" height="300"></canvas>
         
         <div class="legend">
             <div style="margin: 5px 0;">
@@ -103,18 +106,18 @@
             ctx.lineWidth = 0.5;
             
             // Vertical grid lines
-            for (let i = 75; i <= 625; i += 125) {
+            for (let i = 75; i <= 525; i += 112.5) {
                 ctx.beginPath();
-                ctx.moveTo(i, 75);
-                ctx.lineTo(i, 375);
+                ctx.moveTo(i, 50);
+                ctx.lineTo(i, 250);
                 ctx.stroke();
             }
             
             // Horizontal grid lines
-            for (let i = 125; i <= 325; i += 50) {
+            for (let i = 100; i <= 225; i += 25) {
                 ctx.beginPath();
                 ctx.moveTo(75, i);
-                ctx.lineTo(625, i);
+                ctx.lineTo(525, i);
                 ctx.stroke();
             }
             
@@ -125,13 +128,13 @@
             // X axis
             ctx.beginPath();
             ctx.moveTo(75, 225);
-            ctx.lineTo(625, 225);
+            ctx.lineTo(525, 225);
             ctx.stroke();
             
             // Y axis
             ctx.beginPath();
-            ctx.moveTo(350, 75);
-            ctx.lineTo(350, 375);
+            ctx.moveTo(300, 75);
+            ctx.lineTo(300, 225);
             ctx.stroke();
             
             // Axis labels
@@ -140,30 +143,33 @@
             ctx.textAlign = 'center';
             
             // X-axis labels
-            ctx.fillText('-2π', 100, 245);
-            ctx.fillText('-π', 225, 245);
-            ctx.fillText('0', 350, 245);
-            ctx.fillText('π', 475, 245);
-            ctx.fillText('2π', 600, 245);
+            ctx.fillText('-2', 87.5, 240);
+            ctx.fillText('-1', 187.5, 240);
+            ctx.fillText('0', 300, 240);
+            ctx.fillText('1', 412.5, 240);
+            ctx.fillText('2', 512.5, 240);
             
             // Y-axis labels
             ctx.textAlign = 'right';
-            ctx.fillText('1', 340, 130);
-            ctx.fillText('0.5', 340, 180);
-            ctx.fillText('0', 340, 230);
-            ctx.fillText('-0.5', 340, 280);
+            ctx.fillText('1.5', 290, 80);
+            ctx.fillText('1', 290, 130);
+            ctx.fillText('0.5', 290, 180);
+            ctx.fillText('0', 290, 230);
         }
 
         function originalFunction(x) {
-            // Square wave function with period 2π
-            const xMod = ((x % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
-            return (xMod < Math.PI) ? 1 : -1;
+            // Period is 2, so map x to [-1, 1] interval
+            let xMod = ((x % 2) + 2) % 2;
+            if (xMod > 1) xMod -= 2;
+            
+            // f(x) = 0 for -1 < x <= 0, f(x) = 1 for 0 < x <= 1
+            return (xMod > 0 && xMod <= 1) ? 1 : 0;
         }
 
         function fourierSum(x, m) {
-            let sum = 0;
+            let sum = 0.5; // a0/2 = 1/2
             for (let n = 1; n <= m; n += 2) {
-                sum += (4 / (n * Math.PI)) * Math.sin(n * x);
+                sum += (2 / (n * Math.PI)) * Math.sin(n * Math.PI * x);
             }
             return sum;
         }
@@ -179,10 +185,10 @@
             ctx.beginPath();
             
             let first = true;
-            for (let px = 75; px <= 625; px += 1) {
-                const x = ((px - 350) / 125) * Math.PI; // Scale: 125px = π units
+            for (let px = 75; px <= 525; px += 1) {
+                const x = ((px - 300) / 112.5); // Scale: 112.5px = 1 unit
                 const y = originalFunction(x);
-                const py = 225 - y * 100; // Scale: 100px = 1 unit
+                const py = 225 - y * 100; // Scale: 100px = 1 unit, y=0 at bottom
                 
                 if (first) {
                     ctx.moveTo(px, py);
@@ -199,12 +205,12 @@
             ctx.beginPath();
             
             first = true;
-            for (let px = 75; px <= 625; px += 1) {
-                const x = ((px - 350) / 125) * Math.PI;
+            for (let px = 75; px <= 525; px += 1) {
+                const x = ((px - 300) / 112.5);
                 const y = fourierSum(x, m);
                 const py = 225 - y * 100;
                 
-                if (py >= 75 && py <= 375) { // Only draw within canvas bounds
+                if (py >= 75 && py <= 225) { // Only draw within visible bounds
                     if (first) {
                         ctx.moveTo(px, py);
                         first = false;
@@ -225,12 +231,7 @@
 
         // Handle canvas resize
         function resizeCanvas() {
-            const container = canvas.parentElement;
-            const containerWidth = container.clientWidth - 40;
-            if (containerWidth < 700) {
-                canvas.width = containerWidth;
-                canvas.height = (containerWidth / 700) * 450;
-            }
+            // Remove resize functionality for iframe
         }
 
         window.addEventListener('resize', resizeCanvas);
