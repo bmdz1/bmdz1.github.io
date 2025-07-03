@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /drafts/
+Allow: /
+
+Sitemap: https://bachirmath.github.io/sitemap.xml
