@@ -45,3 +45,7 @@ $$x = \frac{5 \pm \sqrt{1}}{2} = \frac{5 \pm 1}{2}$$
 $$x = 3 \text{ أو } x = 2$$
 
 </details>
+
+<br>
+
+<iframe src="/assets/quadratic_solver.html" width="100%" height="800" frameborder="0" style="border-radius: 10px;"></iframe>
