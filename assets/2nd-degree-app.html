@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حاسبة المعادلات التربيعية</title>
+    <style>
+        body {
+            font-family: 'Arial', 'Tahoma', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .calculator {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+        
+        .equation {
+            font-size: 1.5em;
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+        }
+        
+        .input-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .input-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .input-item label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        
+        .input-item input {
+            width: 80px;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.1em;
+            transition: border-color 0.3s;
+        }
+        
+        .input-item input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .calculate-btn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin: 20px 0;
+        }
+        
+        .calculate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .results {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border: 2px solid #e9ecef;
+            text-align: right;
+            direction: rtl;
+        }
+        
+        .step {
+            margin: 15px 0;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            border-right: 4px solid #667eea;
+            direction: rtl;
+            text-align: right;
+        }
+        
+        .delta-positive { border-right-color: #28a745; }
+        .delta-zero { border-right-color: #ffc107; }
+        .delta-negative { border-right-color: #dc3545; }
+        
+        .solution {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+            margin: 10px 0;
+        }
+        
+        .math {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.1em;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .error {
+            color: #dc3545;
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h1>🧮 حاسبة المعادلات التربيعية</h1>
+        
+        <div class="equation">
+            <span class="math">
+                <span id="coeffA">a</span>x²<span id="coeffB">b</span>x<span id="coeffC">c</span> = 0
+            </span>
+        </div>
+        
+        <div class="input-group">
+            <div class="input-item">
+                <label for="inputA">المعامل a</label>
+                <input type="number" id="inputA" value="1" step="any">
+            </div>
+            <div class="input-item">
+                <label for="inputB">المعامل b</label>
+                <input type="number" id="inputB" value="-5" step="any">
+            </div>
+            <div class="input-item">
+                <label for="inputC">المعامل c</label>
+                <input type="number" id="inputC" value="6" step="any">
+            </div>
+        </div>
+        
+        <button class="calculate-btn" onclick="solve()">احسب الحلول</button>
+        
+        <div id="results" class="results hidden">
+            <div id="steps"></div>
+        </div>
+    </div>
+
+    <script>
+        function updateEquation() {
+            const a = parseFloat(document.getElementById('inputA').value) || 1;
+            const b = parseFloat(document.getElementById('inputB').value) || 0;
+            const c = parseFloat(document.getElementById('inputC').value) || 0;
+            
+            document.getElementById('coeffA').textContent = a;
+            
+            // Handle b coefficient
+            if (b > 0) {
+                document.getElementById('coeffB').textContent = ' + ' + b;
+            } else if (b < 0) {
+                document.getElementById('coeffB').textContent = ' - ' + Math.abs(b);
+            } else {
+                document.getElementById('coeffB').textContent = '';
+            }
+            
+            // Handle c coefficient  
+            if (c > 0) {
+                document.getElementById('coeffC').textContent = ' + ' + c;
+            } else if (c < 0) {
+                document.getElementById('coeffC').textContent = ' - ' + Math.abs(c);
+            } else {
+                document.getElementById('coeffC').textContent = '';
+            }
+        }
+        
+        function solve() {
+            const a = parseFloat(document.getElementById('inputA').value);
+            const b = parseFloat(document.getElementById('inputB').value);
+            const c = parseFloat(document.getElementById('inputC').value);
+            
+            const resultsDiv = document.getElementById('results');
+            const stepsDiv = document.getElementById('steps');
+            
+            if (isNaN(a) || isNaN(b) || isNaN(c)) {
+                stepsDiv.innerHTML = '<div class="error">يرجى إدخال قيم صحيحة لجميع المعاملات</div>';
+                resultsDiv.classList.remove('hidden');
+                return;
+            }
+            
+            if (a === 0) {
+                stepsDiv.innerHTML = '<div class="error">المعامل a لا يمكن أن يكون صفراً في المعادلة التربيعية</div>';
+                resultsDiv.classList.remove('hidden');
+                return;
+            }
+            
+            let steps = '';
+            
+            // Step 1: Show the equation
+            let bText = '';
+            if (b > 0) bText = ` + ${b}`;
+            else if (b < 0) bText = ` - ${Math.abs(b)}`;
+            // if b = 0, bText stays empty
+            
+            let cText = '';
+            if (c > 0) cText = ` + ${c}`;
+            else if (c < 0) cText = ` - ${Math.abs(c)}`;
+            // if c = 0, cText stays empty
+            
+            steps += `<div class="step">
+                <strong>المعادلة:</strong><br>
+                <span class="math">${a}x²${bText}x${cText} = 0</span>
+            </div>`;
+            
+            // Step 2: Calculate discriminant
+            const delta = b * b - 4 * a * c;
+            steps += `<div class="step">
+                <strong>حساب المميز (Δ):</strong><br>
+                <span class="math">Δ = b² - 4ac = (${b})² - 4(${a})(${c})</span><br>
+                <span class="math">Δ = ${b * b} - ${4 * a * c} = ${delta}</span>
+            </div>`;
+            
+            // Step 3: Interpret discriminant
+            let deltaClass = '';
+            let deltaText = '';
+            if (delta > 0) {
+                deltaClass = 'delta-positive';
+                deltaText = 'المميز موجب، لذلك المعادلة لها حلان حقيقيان مختلفان';
+            } else if (delta === 0) {
+                deltaClass = 'delta-zero';
+                deltaText = 'المميز يساوي صفراً، لذلك المعادلة لها حل واحد مضاعف';
+            } else {
+                deltaClass = 'delta-negative';
+                deltaText = 'المميز سالب، لذلك المعادلة لها حلان عقديان';
+            }
+            
+            steps += `<div class="step ${deltaClass}">
+                <strong>تفسير المميز:</strong><br>
+                ${deltaText}
+            </div>`;
+            
+            // Step 4: Calculate solutions
+            steps += `<div class="step">
+                <strong>الحلول باستخدام القانون العام:</strong><br>
+                <span class="math">x = (-b ± √Δ) ÷ (2a)</span><br>
+                <span class="math">x = (-${b} ± √${delta}) ÷ (2×${a})</span><br>
+                <span class="math">x = (${-b} ± √${delta}) ÷ ${2 * a}</span>
+            </div>`;
+            
+            if (delta >= 0) {
+                const sqrtDelta = Math.sqrt(delta);
+                const x1 = (-b + sqrtDelta) / (2 * a);
+                const x2 = (-b - sqrtDelta) / (2 * a);
+                
+                if (delta === 0) {
+                    steps += `<div class="step solution">
+                        <strong>الحل:</strong><br>
+                        <span class="math">x = ${-b} / ${2 * a} = ${x1.toFixed(4)}</span>
+                    </div>`;
+                } else {
+                    steps += `<div class="step solution">
+                        <strong>الحلول:</strong><br>
+                        <span class="math">x₁ = (${-b} + √${delta}) / ${2 * a} = (${-b} + ${sqrtDelta.toFixed(4)}) / ${2 * a} = ${x1.toFixed(4)}</span><br>
+                        <span class="math">x₂ = (${-b} - √${delta}) / ${2 * a} = (${-b} - ${sqrtDelta.toFixed(4)}) / ${2 * a} = ${x2.toFixed(4)}</span>
+                    </div>`;
+                }
+            } else {
+                const sqrtAbsDelta = Math.sqrt(-delta);
+                const realPart = -b / (2 * a);
+                const imagPart = sqrtAbsDelta / (2 * a);
+                
+                steps += `<div class="step solution">
+                    <strong>الحلول العقدية:</strong><br>
+                    <span class="math">x₁ = ${realPart.toFixed(4)} + ${imagPart.toFixed(4)}i</span><br>
+                    <span class="math">x₂ = ${realPart.toFixed(4)} - ${imagPart.toFixed(4)}i</span>
+                </div>`;
+            }
+            
+            stepsDiv.innerHTML = steps;
+            resultsDiv.classList.remove('hidden');
+        }
+        
+        // Update equation display when inputs change
+        document.getElementById('inputA').addEventListener('input', updateEquation);
+        document.getElementById('inputB').addEventListener('input', updateEquation);
+        document.getElementById('inputC').addEventListener('input', updateEquation);
+        
+        // Initial equation display
+        updateEquation();
+    </script>
+</body>
+</html>
