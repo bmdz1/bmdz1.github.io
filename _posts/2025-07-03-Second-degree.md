@@ -49,4 +49,4 @@ $$x = 3 \text{ أو } x = 2$$
 
 <br>
 
-<iframe src="/assets/second-degree-app.html" width="100%" height="800" frameborder="0" style="border-radius: 10px;"></iframe>
+<iframe src="/assets/second-degree-app.html" width="100%" height="400" frameborder="0" style="border-radius: 10px;"></iframe>
