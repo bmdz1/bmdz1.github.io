@@ -9,7 +9,7 @@ permalink: /about/
 
 
 ## تابعوني على اليوتيوب
-[BachirMath](https://www.youtube.com/@BAC-MATH-DZ )
+[BAC-MATH-DZ](https://www.youtube.com/@BAC-MATH-DZ )
 
 
 ## لمراسلتي
