@@ -94,18 +94,16 @@
           y: [...yg1, ...yg2, ...yg3]
         };
       } else if (func === 'h') {
-    // Piecewise linear with jump at x=0: h(x) = -2+2x for x∈[-1,0], then h(x)=1+x for x∈(0,2]
-    const x1 = linspace(-1, 0, 150);
-    const y1 = x1.map(x => -2 + 2*x);
-
-    const x2 = linspace(0.0001, 2, 200);  // start just right of 0 to avoid duplicate x=0
-    const y2 = x2.map(x => 1 + x);
-
-    return {
-        x: [...x1, ...x2],
-        y: [...y1, ...y2]
-    };
-}
+        const x1 = linspace(-1, 0, 150);
+        const y1 = x1.map(x => -2 + 2*(x + 1));
+        const x2 = linspace(0.0001, 2, 200);
+        const y2 = x2.map(x => 1 + x);
+        return {
+          x: [...x1, ...x2],
+          y: [...y1, ...y2],
+          isDiscontinuous: true
+        };
+      }
     }
     
     function toCanvasX(x) {
@@ -113,27 +111,30 @@
     }
     
     function toCanvasY(y) {
-      return canvas.height - ((y + 3) / 6) * canvas.height;
+      return canvas.height - ((y + 2.2) / 5.4) * canvas.height;
     }
     
     function countIntersections(data, k) {
-      const {x, y} = data;
+      const {x, y, isDiscontinuous} = data;
       let count = 0;
       
       for (let i = 0; i < y.length - 1; i++) {
-        // Check if horizontal line y=k crosses between two consecutive points
-        if ((y[i] < k && y[i+1] > k) || (y[i] > k && y[i+1] < k)) {
-          count++;
-        }
-        // Also check if k equals a point exactly
-        else if (y[i] === k) {
+        const y1 = y[i];
+        const y2 = y[i + 1];
+        
+        // Skip the discontinuity gap for function h
+        if (isDiscontinuous && Math.abs(x[i] - 0) < 0.001) continue;
+        
+        // Check if horizontal line y=k crosses between consecutive points
+        if ((y1 < k && y2 > k) || (y1 > k && y2 < k)) {
           count++;
         }
       }
       
-      // Check the last point
-      if (y[y.length - 1] === k) {
-        count++;
+      // Check endpoints for exact matches (avoid double counting)
+      if (y.length > 0) {
+        if (Math.abs(y[0] - k) < 0.001) count++;
+        if (Math.abs(y[y.length - 1] - k) < 0.001 && Math.abs(y[0] - k) > 0.001) count++;
       }
       
       return count;
@@ -178,27 +179,79 @@
       ctx.moveTo(xZero, 0);
       ctx.lineTo(xZero, canvas.height);
       ctx.stroke();
+      
+      // Add axis labels
+      ctx.fillStyle = '#000';
+      ctx.font = '12px Arial';
+      ctx.textAlign = 'center';
+      
+      // X-axis labels
+      for (let x = -1; x <= 2; x += 1) {
+        const canvasX = toCanvasX(x);
+        ctx.fillText(x.toString(), canvasX, yZero + 15);
+      }
+      
+      // Y-axis labels
+      ctx.textAlign = 'right';
+      for (let y = -2; y <= 3; y += 1) {
+        if (y !== 0) {
+          const canvasY = toCanvasY(y);
+          ctx.fillText(y.toString(), xZero - 5, canvasY + 3);
+        }
+      }
     }
     
     function drawFunction(data) {
-      const {x, y} = data;
+      const {x, y, isDiscontinuous} = data;
       
       ctx.strokeStyle = 'red';
       ctx.lineWidth = 3;
       ctx.beginPath();
       
-      for (let i = 0; i < x.length; i++) {
-        const canvasX = toCanvasX(x[i]);
-        const canvasY = toCanvasY(y[i]);
-        
-        if (i === 0) {
-          ctx.moveTo(canvasX, canvasY);
-        } else {
-          ctx.lineTo(canvasX, canvasY);
+      if (isDiscontinuous) {
+        // Draw left segment
+        let i = 0;
+        while (i < x.length && x[i] <= 0) {
+          const canvasX = toCanvasX(x[i]);
+          const canvasY = toCanvasY(y[i]);
+          if (i === 0) {
+            ctx.moveTo(canvasX, canvasY);
+          } else {
+            ctx.lineTo(canvasX, canvasY);
+          }
+          i++;
         }
+        ctx.stroke();
+        
+        // Draw right segment
+        ctx.beginPath();
+        let firstRight = true;
+        while (i < x.length) {
+          const canvasX = toCanvasX(x[i]);
+          const canvasY = toCanvasY(y[i]);
+          if (firstRight) {
+            ctx.moveTo(canvasX, canvasY);
+            firstRight = false;
+          } else {
+            ctx.lineTo(canvasX, canvasY);
+          }
+          i++;
+        }
+        ctx.stroke();
+      } else {
+        // Draw continuous function
+        for (let i = 0; i < x.length; i++) {
+          const canvasX = toCanvasX(x[i]);
+          const canvasY = toCanvasY(y[i]);
+          
+          if (i === 0) {
+            ctx.moveTo(canvasX, canvasY);
+          } else {
+            ctx.lineTo(canvasX, canvasY);
+          }
+        }
+        ctx.stroke();
       }
-      
-      ctx.stroke();
     }
     
     function drawHorizontalLine(k) {
