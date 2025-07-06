@@ -94,7 +94,8 @@
                     gridcolor: '#E0E0E0',
                     zeroline: true,
                     zerolinecolor: '#999999',
-                    zerolinewidth: 1
+                    zerolinewidth: 1,
+                    fixedrange: true
                 },
                 yaxis: {
                     title: 'y',
@@ -103,7 +104,8 @@
                     gridcolor: '#E0E0E0',
                     zeroline: true,
                     zerolinecolor: '#999999',
-                    zerolinewidth: 1
+                    zerolinewidth: 1,
+                    fixedrange: true
                 },
                 plot_bgcolor: '#FAFAFA',
                 paper_bgcolor: 'white',
@@ -121,7 +123,11 @@
             const config = {
                 responsive: true,
                 displayModeBar: false,
-                displaylogo: false
+                displaylogo: false,
+                scrollZoom: false,
+                doubleClick: false,
+                showTips: false,
+                staticPlot: true
             };
 
             Plotly.newPlot('plot', traces, layout, config);
