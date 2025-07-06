@@ -3,7 +3,8 @@ name: Build and Deploy Jekyll site to gh-pages
 on:
   push:
     branches:
-      - main  # change if your source branch has a different name
+      - master
+
 
 jobs:
   build-deploy:
