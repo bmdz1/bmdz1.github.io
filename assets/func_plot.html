@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>رسم الدالة</title>
+    <title>رسم الدوال</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.18.0/plotly.min.js"></script>
     <style>
         body {
@@ -26,109 +26,111 @@
             height: 500px;
             margin: 20px 0;
         }
+        select {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <label for="functionSelect">اختر الدالة:</label>
+        <select id="functionSelect">
+            <option value="Cg">C<sub>g</sub></option>
+            <option value="Cf">C<sub>f</sub></option>
+            <option value="Ch">C<sub>h</sub></option>
+        </select>
         <div id="plot"></div>
     </div>
 
     <script>
-        function f(x) {
-            return x - 1 - 1/x;
+        function plotCg() {
+            const x=[], y=[];
+            // Segment 1: (-1,3) → (0,0) nonlinear
+            for(let i=0;i<=100;i++) {
+                let t=i/100;
+                x.push(-1 + t);
+                y.push(3*(1 - t*t)); // quadratic down
+            }
+            // Segment 2: (0,0) → (1,1) linear
+            for(let i=1;i<=100;i++) {
+                let t=i/100;
+                x.push(t);
+                y.push(t);
+            }
+            // Segment 3: (1,1) → (2,-2) nonlinear
+            for(let i=1;i<=100;i++) {
+                let t=i/100;
+                x.push(1 + t);
+                y.push(1 - 3*t*t); // quadratic down
+            }
+            return [{ x, y, type:'scatter', mode:'lines', name:'C<sub>g</sub>', line:{color:'#2E7D32',width:3} }];
         }
 
-        function asymptote(x) {
-            return x - 1;
+        function plotCf() {
+            const x=[], y=[];
+            for(let i=0;i<=300;i++) {
+                let t=i/300;
+                x.push(-1 + 3*t); // -1 to 2
+                y.push(-2 + 5*t*t*t); // smooth increasing cubic
+            }
+            return [{ x, y, type:'scatter', mode:'lines', name:'C<sub>f</sub>', line:{color:'#1565C0',width:3} }];
         }
 
-        function createPlot() {
-            // Generate function data
-            const x_values = [];
-            const y_values = [];
-            
-            for (let x = 0.05; x <= 15; x += 0.05) {
-                x_values.push(x);
-                y_values.push(f(x));
-            }
+function plotCh() {
+    const x=[], y=[];
+    // Segment 1: (-1,-2) → (0,0)
+    for(let i=0;i<=100;i++) {
+        let t=i/100;
+        x.push(-1 + t);
+        y.push(-2 + 2*t);
+    }
+    // Insert a break (null) for vertical jump
+    x.push(0);
+    y.push(null);
+    // Segment 2: (0,1) → (2,3)
+    for(let i=0;i<=100;i++) {
+        let t=i/100;
+        x.push(0 + 2*t);
+        y.push(1 + 2*t);
+    }
+    return [
+        { x, y, type:'scatter', mode:'lines', name:'C<sub>h</sub>', line:{color:'#F9A825',width:3} }
+    ];
+}
 
-            // Generate asymptote data
-            const x_asymptote = [];
-            const y_asymptote = [];
-            for (let x = 0.1; x <= 15; x += 0.5) {
-                x_asymptote.push(x);
-                y_asymptote.push(asymptote(x));
-            }
 
-            const traces = [
-                {
-                    x: x_values,
-                    y: y_values,
-                    type: 'scatter',
-                    mode: 'lines',
-                    name: '(C<sub>f</sub>)',
-                    line: { 
-                        color: '#2E7D32', 
-                        width: 3 
-                    }
-                },
-                {
-                    x: x_asymptote,
-                    y: y_asymptote,
-                    type: 'scatter',
-                    mode: 'lines',
-                    name: '(D): y = x - 1',
-                    line: { 
-                        color: '#FF6B6B', 
-                        width: 2, 
-                        dash: 'dash' 
-                    }
-                }
-            ];
+        function updatePlot() {
+            const func = document.getElementById('functionSelect').value;
+            let traces;
+            if (func === 'Cg') traces = plotCg();
+            else if (func === 'Cf') traces = plotCf();
+            else traces = plotCh();
 
             const layout = {
                 xaxis: {
-                    title: 'x',
-                    range: [0, 10],
-                    showgrid: true,
-                    gridcolor: '#E0E0E0',
-                    zeroline: true,
-                    zerolinecolor: '#999999',
-                    zerolinewidth: 1
+                    title: 'x', range: [-1.5, 2.5],
+                    showgrid: true, gridcolor: '#E0E0E0',
+                    zeroline: true, zerolinecolor: '#999', zerolinewidth: 1
                 },
                 yaxis: {
-                    title: 'y',
-                    range: [-10, 10],
-                    showgrid: true,
-                    gridcolor: '#E0E0E0',
-                    zeroline: true,
-                    zerolinecolor: '#999999',
-                    zerolinewidth: 1
+                    title: 'y', range: [-3,4],
+                    showgrid: true, gridcolor: '#E0E0E0',
+                    zeroline: true, zerolinecolor: '#999', zerolinewidth: 1
                 },
                 plot_bgcolor: '#FAFAFA',
                 paper_bgcolor: 'white',
                 showlegend: true,
-                legend: {
-                    x: 0.02,
-                    y: 0.98,
-                    bgcolor: 'rgba(255,255,255,0.9)',
-                    bordercolor: '#E0E0E0',
-                    borderwidth: 1
-                },
+                legend: { x:0.02, y:0.98, bgcolor:'rgba(255,255,255,0.9)', bordercolor:'#E0E0E0', borderwidth:1 },
                 margin: { l: 60, r: 40, t: 40, b: 50 }
             };
-
-            const config = {
-                responsive: true,
-                displayModeBar: false,
-                displaylogo: false
-            };
-
+            const config = { responsive: true, displayModeBar: false, displaylogo: false };
             Plotly.newPlot('plot', traces, layout, config);
         }
 
-        // Initialize the plot
-        createPlot();
+        document.getElementById('functionSelect').addEventListener('change', updatePlot);
+
+        updatePlot(); // initial plot
     </script>
 </body>
 </html>
