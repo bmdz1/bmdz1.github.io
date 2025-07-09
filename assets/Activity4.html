@@ -12,6 +12,8 @@
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
+            -webkit-touch-callout: none;
+            -webkit-tap-highlight-color: transparent;
         }
         
         body {
@@ -121,9 +123,14 @@
         
         #plot {
             width: 100%;
-            height: 400px;
+            height: 450px;
             margin: 15px 0;
             touch-action: manipulation;
+            pointer-events: none;
+        }
+        
+        #plot .plotly {
+            pointer-events: auto;
         }
         
         .function-info {
@@ -176,7 +183,7 @@
             }
             
             #plot {
-                height: 350px;
+                height: 400px;
                 margin: 10px 0;
             }
         }
@@ -203,7 +210,7 @@
             }
             
             #plot {
-                height: 300px;
+                height: 350px;
             }
         }
     </style>
@@ -446,14 +453,34 @@
                 scrollZoom: false,
                 doubleClick: false,
                 showTips: false,
-                staticPlot: false,
+                staticPlot: true,
                 modeBarButtonsToRemove: ['zoom2d', 'pan2d', 'select2d', 'lasso2d', 'zoomIn2d', 'zoomOut2d', 'autoScale2d', 'resetScale2d'],
                 doubleClickDelay: 1000,
                 showAxisDragHandles: false,
-                showAxisRangeEntryBoxes: false
+                showAxisRangeEntryBoxes: false,
+                editable: false,
+                dragmode: false
             };
             
             Plotly.newPlot('plot', traces, layout, config);
+            
+            // Additional zoom prevention
+            const plotDiv = document.getElementById('plot');
+            plotDiv.addEventListener('wheel', function(e) {
+                e.preventDefault();
+            }, { passive: false });
+            
+            plotDiv.addEventListener('touchstart', function(e) {
+                if (e.touches.length > 1) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
+            
+            plotDiv.addEventListener('touchmove', function(e) {
+                if (e.touches.length > 1) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
         }
         
         function selectFunction(func) {
