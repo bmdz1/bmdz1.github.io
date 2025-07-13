@@ -3,7 +3,7 @@
 #
 
 # اسم المدونة الذي سيظهر في الأعلى
-name: BAC-MATH-DZ
+name: BMDZ
 
 # وصف قصير للمدونة والذي سيظهر تحت اسمها وكجزء من عنوان المدونة في محركات البحث
 description: رياضيات الباك
@@ -46,7 +46,7 @@ google_analytics:
 
 # عنوان موقعك مثلاً http://barryclark.github.io
 # يستخدم هذا المتغير في الـRSS والـSitemap.xml
-url: https://bachirmath.github.io
+url: https://bmdz1.github.io
 
 # إذا كانت المدونة خاصة للصفحات المشاريع في GitHub (http://yourusername.github.io/repository-name مثلاً) عدل هذا المتغير ليطابق اسم المشروع
 baseurl: ""
