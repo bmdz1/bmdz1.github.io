@@ -9,7 +9,7 @@ permalink: /about/
 
 
 ## تابعوني على اليوتيوب
-[BAC-MATH-DZ](https://www.youtube.com/@BMDZ-1)
+[BMDZ-1](https://www.youtube.com/@BMDZ-1)
 
 
 ## لمراسلتي
