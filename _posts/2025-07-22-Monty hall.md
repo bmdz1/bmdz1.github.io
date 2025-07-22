@@ -19,7 +19,7 @@ tag: احتمالات
 
 ## 🎮 جرب بنفسك!
 
-<iframe src="/assets/monty-hall-simulator.html" width="100%" height="800" frameborder="0" style="border-radius: 10px;"></iframe>
+<iframe src="/assets/monty-hall-simulator.html" width="100%" height="1000" frameborder="0" style="border-radius: 10px;"></iframe>
 
 ---
 
