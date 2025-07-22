@@ -271,17 +271,17 @@
         <div class="game-area">
             <div class="doors">
                 <div class="door" id="door1" onclick="selectDoor(1)">
-                    <div class="door-number">1</div>
+                    <div class="door-number">١</div>
                     <div class="door-handle"></div>
                     <div class="door-content"></div>
                 </div>
                 <div class="door" id="door2" onclick="selectDoor(2)">
-                    <div class="door-number">2</div>
+                    <div class="door-number">٢</div>
                     <div class="door-handle"></div>
                     <div class="door-content"></div>
                 </div>
                 <div class="door" id="door3" onclick="selectDoor(3)">
-                    <div class="door-number">3</div>
+                    <div class="door-number">٣</div>
                     <div class="door-handle"></div>
                     <div class="door-content"></div>
                 </div>
@@ -340,7 +340,12 @@
             switchTotal: 0
         };
 
-        // Remove Arabic numerals conversion function and use regular numbers
+        // Arabic numerals conversion
+        function toArabicNumerals(num) {
+            const arabicNumerals = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
+            return num.toString().replace(/[0-9]/g, (digit) => arabicNumerals[digit]);
+        }
+
         function initGame() {
             gameState = {
                 phase: 'select',
@@ -356,6 +361,7 @@
                 door.className = 'door';
                 door.onclick = () => selectDoor(i);
                 door.querySelector('.door-content').innerHTML = '';
+                door.style.border = '6px solid #654321';
             }
 
             document.getElementById('message').textContent = 'اضغط على أي باب أعلاه لبدء اللعب! 🎯';
@@ -374,19 +380,23 @@
         }
 
         function revealGoatDoor() {
-            let possibleDoors = [];
+            // Find doors that are not selected and don't have the car
+            let goatDoors = [];
             for (let i = 1; i <= 3; i++) {
                 if (i !== gameState.selectedDoor && i !== gameState.carDoor) {
-                    possibleDoors.push(i);
+                    goatDoors.push(i);
                 }
             }
 
-            if (possibleDoors.length === 0) {
-                possibleDoors = [1, 2, 3].filter(i => i !== gameState.selectedDoor);
-                gameState.revealedDoor = possibleDoors[Math.floor(Math.random() * possibleDoors.length)];
-            } else {
-                gameState.revealedDoor = possibleDoors[Math.floor(Math.random() * possibleDoors.length)];
+            // If the selected door has the car, we can reveal either of the other two doors
+            if (goatDoors.length === 0) {
+                // This means the car is behind the selected door
+                // So we can reveal any of the other doors (they both have goats)
+                goatDoors = [1, 2, 3].filter(i => i !== gameState.selectedDoor);
             }
+
+            // Randomly choose one of the goat doors to reveal
+            gameState.revealedDoor = goatDoors[Math.floor(Math.random() * goatDoors.length)];
 
             const revealedDoorEl = document.getElementById(`door${gameState.revealedDoor}`);
             revealedDoorEl.classList.add('opened');
@@ -401,12 +411,12 @@
             const otherDoor = [1, 2, 3].find(i => i !== gameState.selectedDoor && i !== gameState.revealedDoor);
             
             document.getElementById('message').innerHTML = 
-                `المضيف كشف عن ماعز خلف الباب ${gameState.revealedDoor}! 🐐<br>
-                اخترت الباب ${gameState.selectedDoor}. هل تريد البقاء أم التبديل إلى الباب ${otherDoor}؟`;
+                `المضيف كشف عن ماعز خلف الباب ${toArabicNumerals(gameState.revealedDoor)}! 🐐<br>
+                اخترت الباب ${toArabicNumerals(gameState.selectedDoor)}. هل تريد البقاء أم التبديل إلى الباب ${toArabicNumerals(otherDoor)}؟`;
 
             document.getElementById('buttons').innerHTML = `
-                <button class="btn btn-stay" onclick="makeChoice('stay')">البقاء مع الباب ${gameState.selectedDoor}</button>
-                <button class="btn btn-switch" onclick="makeChoice('switch')">التبديل إلى الباب ${otherDoor}</button>
+                <button class="btn btn-stay" onclick="makeChoice('stay')">البقاء مع الباب ${toArabicNumerals(gameState.selectedDoor)}</button>
+                <button class="btn btn-switch" onclick="makeChoice('switch')">التبديل إلى الباب ${toArabicNumerals(otherDoor)}</button>
             `;
         }
 
@@ -465,11 +475,25 @@
             
             document.getElementById('message').innerHTML = 
                 `<span class="${resultClass}">${resultEmoji} ${resultText}</span><br>
-                كانت السيارة خلف الباب ${gameState.carDoor}.`;
+                كانت السيارة خلف الباب ${toArabicNumerals(gameState.carDoor)}.`;
 
             document.getElementById('buttons').innerHTML = `
                 <button class="btn btn-reset" onclick="initGame()">العب مرة أخرى</button>
             `;
+        }
+
+        function updateStats() {
+            document.getElementById('totalGames').textContent = stats.totalGames;
+            document.getElementById('stayWins').textContent = stats.stayWins;
+            document.getElementById('stayTotal').textContent = `/ ${stats.stayTotal} فوز`;
+            document.getElementById('switchWins').textContent = stats.switchWins;
+            document.getElementById('switchTotal').textContent = `/ ${stats.switchTotal} فوز`;
+            
+            const stayRate = stats.stayTotal > 0 ? Math.round((stats.stayWins / stats.stayTotal) * 100) : 0;
+            const switchRate = stats.switchTotal > 0 ? Math.round((stats.switchWins / stats.switchTotal) * 100) : 0;
+            
+            document.getElementById('stayRate').textContent = `${stayRate}%`;
+            document.getElementById('switchRate').textContent = `${switchRate}%`;
         }
 
         initGame();
