@@ -271,17 +271,17 @@
         <div class="game-area">
             <div class="doors">
                 <div class="door" id="door1" onclick="selectDoor(1)">
-                    <div class="door-number">١</div>
+                    <div class="door-number">1</div>
                     <div class="door-handle"></div>
                     <div class="door-content"></div>
                 </div>
                 <div class="door" id="door2" onclick="selectDoor(2)">
-                    <div class="door-number">٢</div>
+                    <div class="door-number">2</div>
                     <div class="door-handle"></div>
                     <div class="door-content"></div>
                 </div>
                 <div class="door" id="door3" onclick="selectDoor(3)">
-                    <div class="door-number">٣</div>
+                    <div class="door-number">3</div>
                     <div class="door-handle"></div>
                     <div class="door-content"></div>
                 </div>
@@ -296,27 +296,27 @@
         <div class="stats">
             <div class="stat-card">
                 <h3>إجمالي الألعاب</h3>
-                <div class="stat-number" id="totalGames">٠</div>
+                <div class="stat-number" id="totalGames">0</div>
                 <div class="stat-label">لعبة</div>
             </div>
             <div class="stat-card">
                 <h3>استراتيجية البقاء</h3>
-                <div class="stat-number" id="stayWins">٠</div>
-                <div class="stat-label" id="stayTotal">/ ٠ فوز</div>
+                <div class="stat-number" id="stayWins">0</div>
+                <div class="stat-label" id="stayTotal">/ 0 فوز</div>
             </div>
             <div class="stat-card">
                 <h3>استراتيجية التبديل</h3>
-                <div class="stat-number" id="switchWins">٠</div>
-                <div class="stat-label" id="switchTotal">/ ٠ فوز</div>
+                <div class="stat-number" id="switchWins">0</div>
+                <div class="stat-label" id="switchTotal">/ 0 فوز</div>
             </div>
             <div class="stat-card">
                 <h3>نسبة فوز البقاء</h3>
-                <div class="stat-number" id="stayRate">٠٪</div>
+                <div class="stat-number" id="stayRate">0%</div>
                 <div class="stat-label">معدل النجاح</div>
             </div>
             <div class="stat-card">
                 <h3>نسبة فوز التبديل</h3>
-                <div class="stat-number" id="switchRate">٠٪</div>
+                <div class="stat-number" id="switchRate">0%</div>
                 <div class="stat-label">معدل النجاح</div>
             </div>
         </div>
@@ -340,12 +340,7 @@
             switchTotal: 0
         };
 
-        // Arabic numerals conversion
-        function toArabicNumerals(num) {
-            const arabicNumerals = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
-            return num.toString().replace(/[0-9]/g, (digit) => arabicNumerals[digit]);
-        }
-
+        // Remove Arabic numerals conversion function and use regular numbers
         function initGame() {
             gameState = {
                 phase: 'select',
@@ -406,12 +401,12 @@
             const otherDoor = [1, 2, 3].find(i => i !== gameState.selectedDoor && i !== gameState.revealedDoor);
             
             document.getElementById('message').innerHTML = 
-                `المضيف كشف عن ماعز خلف الباب ${toArabicNumerals(gameState.revealedDoor)}! 🐐<br>
-                اخترت الباب ${toArabicNumerals(gameState.selectedDoor)}. هل تريد البقاء أم التبديل إلى الباب ${toArabicNumerals(otherDoor)}؟`;
+                `المضيف كشف عن ماعز خلف الباب ${gameState.revealedDoor}! 🐐<br>
+                اخترت الباب ${gameState.selectedDoor}. هل تريد البقاء أم التبديل إلى الباب ${otherDoor}؟`;
 
             document.getElementById('buttons').innerHTML = `
-                <button class="btn btn-stay" onclick="makeChoice('stay')">البقاء مع الباب ${toArabicNumerals(gameState.selectedDoor)}</button>
-                <button class="btn btn-switch" onclick="makeChoice('switch')">التبديل إلى الباب ${toArabicNumerals(otherDoor)}</button>
+                <button class="btn btn-stay" onclick="makeChoice('stay')">البقاء مع الباب ${gameState.selectedDoor}</button>
+                <button class="btn btn-switch" onclick="makeChoice('switch')">التبديل إلى الباب ${otherDoor}</button>
             `;
         }
 
@@ -470,25 +465,11 @@
             
             document.getElementById('message').innerHTML = 
                 `<span class="${resultClass}">${resultEmoji} ${resultText}</span><br>
-                كانت السيارة خلف الباب ${toArabicNumerals(gameState.carDoor)}.`;
+                كانت السيارة خلف الباب ${gameState.carDoor}.`;
 
             document.getElementById('buttons').innerHTML = `
                 <button class="btn btn-reset" onclick="initGame()">العب مرة أخرى</button>
             `;
-        }
-
-        function updateStats() {
-            document.getElementById('totalGames').textContent = toArabicNumerals(stats.totalGames);
-            document.getElementById('stayWins').textContent = toArabicNumerals(stats.stayWins);
-            document.getElementById('stayTotal').textContent = `/ ${toArabicNumerals(stats.stayTotal)} فوز`;
-            document.getElementById('switchWins').textContent = toArabicNumerals(stats.switchWins);
-            document.getElementById('switchTotal').textContent = `/ ${toArabicNumerals(stats.switchTotal)} فوز`;
-            
-            const stayRate = stats.stayTotal > 0 ? Math.round((stats.stayWins / stats.stayTotal) * 100) : 0;
-            const switchRate = stats.switchTotal > 0 ? Math.round((stats.switchWins / stats.switchTotal) * 100) : 0;
-            
-            document.getElementById('stayRate').textContent = `${toArabicNumerals(stayRate)}٪`;
-            document.getElementById('switchRate').textContent = `${toArabicNumerals(switchRate)}٪`;
         }
 
         initGame();
