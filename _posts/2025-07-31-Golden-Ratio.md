@@ -20,7 +20,8 @@ $$\frac{a + b}{a} = \frac{a}{b} = \phi$$
 
 ### التمثيل الهندسي
 
-<svg width="600" height="250" viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg">
+<div style="width: 100%; max-width: 600px; margin: 20px auto; overflow: hidden;">
+  <svg width="100%" height="auto" viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg" style="display: block;">
   <!-- Background -->
   <rect width="600" height="250" fill="#fafafa"/>
   
@@ -47,10 +48,8 @@ $$\frac{a + b}{a} = \frac{a}{b} = \phi$$
   <text x="300" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" direction="ltr" unicode-bidi="embed">
     <tspan fill="#3498db">(a + b)</tspan><tspan fill="#2c3e50">/</tspan><tspan fill="#27ae60">a</tspan><tspan fill="#2c3e50"> = </tspan><tspan fill="#27ae60">a</tspan><tspan fill="#2c3e50">/</tspan><tspan fill="#f39c12">b</tspan><tspan fill="#2c3e50"> = φ</tspan>
   </text>
-  
-  <!-- Golden ratio value -->
-  <text x="300" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#666">φ = 1.618...</text>
-</svg>
+  </svg>
+</div>
 
 
 ## اشتقاق القيمة
