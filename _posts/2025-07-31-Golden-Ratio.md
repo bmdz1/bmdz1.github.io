@@ -23,7 +23,7 @@ $$\frac{a + b}{a} = \frac{a}{b} = \phi$$
 <div style="width: 100%; max-width: 600px; margin: 20px auto; overflow: hidden;">
   <svg width="100%" height="auto" viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg" style="display: block;">
   <!-- Background -->
-  <rect width="600" height="250" fill="#fafafa"/>
+  <rect width="600" height="250" fill="#ffffff"/>
   
   <!-- Main line -->
   <line x1="50" y1="125" x2="500" y2="125" stroke="#2c3e50" stroke-width="4"/>
