@@ -19,38 +19,42 @@ author: Bachir
 $$\frac{a + b}{a} = \frac{a}{b} = \phi$$
 
 ### التمثيل الهندسي
+### التمثيل الهندسي
 
-<svg width="600" height="250" viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
-  <rect width="600" height="250" fill="#fafafa"/>
+<div style="width: 100%; max-width: 600px; margin: 20px auto; text-align: center;">
+  <div dir="ltr" style="font-size: 18px; font-weight: bold; margin-bottom: 10px; color: #2c3e50;">
+    (a + b)/a = a/b = φ = 1.618...
+  </div>
   
-  <!-- Main line -->
-  <line x1="50" y1="125" x2="500" y2="125" stroke="#2c3e50" stroke-width="4"/>
+  <svg width="100%" height="auto" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" style="display: block;">
+    <!-- Simplified SVG without text that might be affected by RTL -->
+    <rect width="600" height="200" fill="#fafafa"/>
+    
+    <!-- Main line -->
+    <line x1="50" y1="100" x2="500" y2="100" stroke="#2c3e50" stroke-width="4"/>
+    
+    <!-- Golden ratio division point -->
+    <line x1="328" y1="80" x2="328" y2="120" stroke="#e74c3c" stroke-width="3"/>
+    <circle cx="328" cy="100" r="4" fill="#e74c3c"/>
+    
+    <!-- Segment a (larger) -->
+    <line x1="50" y1="70" x2="328" y2="70" stroke="#27ae60" stroke-width="6"/>
+    
+    <!-- Segment b (smaller) -->
+    <line x1="328" y1="130" x2="500" y2="130" stroke="#f39c12" stroke-width="6"/>
+    
+    <!-- Total length indicator -->
+    <path d="M 50 160 Q 275 175 500 160" stroke="#3498db" stroke-width="2" fill="none"/>
+  </svg>
   
-  <!-- Golden ratio division point -->
-  <line x1="328" y1="105" x2="328" y2="145" stroke="#e74c3c" stroke-width="3"/>
-  <circle cx="328" cy="125" r="4" fill="#e74c3c"/>
-  
-  <!-- Segment a (larger) -->
-  <line x1="50" y1="95" x2="328" y2="95" stroke="#27ae60" stroke-width="6"/>
-  <text x="189" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#27ae60">a</text>
-  
-  <!-- Segment b (smaller) -->
-  <line x1="328" y1="155" x2="500" y2="155" stroke="#f39c12" stroke-width="6"/>
-  <text x="414" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#f39c12">b</text>
-  
-  <!-- Total length indicator -->
-  <path d="M 50 190 Q 275 210 500 190" stroke="#3498db" stroke-width="2" fill="none"/>
-  <text x="275" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#3498db">a + b</text>
-  
-  <!-- Formula -->
-  <text x="300" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50">
-    <tspan fill="#3498db">(a + b)</tspan>/<tspan fill="#27ae60">a</tspan> = <tspan fill="#27ae60">a</tspan>/<tspan fill="#f39c12">b</tspan> = φ
-  </text>
-  
-  <!-- Golden ratio value -->
-  <text x="300" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#666">φ = 1.618...</text>
-</svg>
+  <div style="display: flex; justify-content: space-around; margin-top: 10px; font-weight: bold;">
+    <span style="color: #27ae60;">a (الجزء الأكبر)</span>
+    <span style="color: #f39c12;">b (الجزء الأصغر)</span>
+    <span style="color: #3498db;">a + b (الكل)</span>
+  </div>
+</div>
+
+
 
 ## اشتقاق القيمة
 من التعريف أعلاه، نحصل على المعادلة:
