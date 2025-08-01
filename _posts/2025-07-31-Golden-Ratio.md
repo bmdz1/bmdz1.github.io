@@ -128,7 +128,7 @@ $$F_n = \frac{\phi^n - (1-\phi)^n}{\sqrt{5}}$$
 - **الهندسة**: بناء الخماسي المنتظم [أنظر هنا](https://www.cut-the-knot.org/do_you_know/GoldenRatioInRegularPentagon.shtml)
 - **المربع الذهبي**: [أنظر هنا](https://www.cut-the-knot.org/do_you_know/GoldenRatioInSquare.shtml)
 
-- 
+  
 ### في العلوم التطبيقية
 - **خوارزميات البحث**: البحث الذهبي في التحسين
 - **التمويل**: تحليل الأسواق المالية
