@@ -125,9 +125,10 @@ $$F_n = \frac{\phi^n - (1-\phi)^n}{\sqrt{5}}$$
 
 ### في الرياضيات
 - **نظرية الأعداد**: دراسة الكسور المستمرة
-- **الهندسة**: بناء الخماسي المنتظم ((https://www.cut-the-knot.org/do_you_know/GoldenRatioInRegularPentagon.shtml)[أنظر هنا])
+- **الهندسة**: بناء الخماسي المنتظم [أنظر هنا](https://www.cut-the-knot.org/do_you_know/GoldenRatioInRegularPentagon.shtml)
 - **التحليل**: دراسة الدوال والمتتاليات
 
+- 
 ### في العلوم التطبيقية
 - **خوارزميات البحث**: البحث الذهبي في التحسين
 - **التمويل**: تحليل الأسواق المالية
