@@ -124,9 +124,9 @@ $$F_n = \frac{\phi^n - (1-\phi)^n}{\sqrt{5}}$$
 ## التطبيقات العملية
 
 ### في الرياضيات
-- **نظرية الأعداد**: دراسة الكسور المستمرة
+- **نظرية الأعداد**: دراسة الكسور المستمرة  [أنظر هنا](https://www.cut-the-knot.org/do_you_know/fraction.shtml)
 - **الهندسة**: بناء الخماسي المنتظم [أنظر هنا](https://www.cut-the-knot.org/do_you_know/GoldenRatioInRegularPentagon.shtml)
-- **التحليل**: دراسة الدوال والمتتاليات
+- **المربع الذهبي**: [أنظر هنا](https://www.cut-the-knot.org/do_you_know/GoldenRatioInSquare.shtml)
 
 - 
 ### في العلوم التطبيقية
