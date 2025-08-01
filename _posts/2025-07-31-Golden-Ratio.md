@@ -112,6 +112,13 @@ $$F_n = \frac{\phi^n - (1-\phi)^n}{\sqrt{5}}$$
 ## الحلزون الذهبي
 بربط أقواس ربع دائرية في سلسلة من المربعات المبنية على متتالية فيبوناتشي، نحصل على الحلزون الذهبي، والذي يقارب الحلزون اللوغاريتمي.
 
+<div style="text-align: center; margin: 20px 0;">
+  <img src="/gifs/Spiral.gif" 
+       alt="Description of your GIF" 
+       style="max-width: 100%; height: auto; border-radius: 8px;">
+</div>
+
+
 ## التطبيقات في الطبيعة والفن
 
 ### في الطبيعة
