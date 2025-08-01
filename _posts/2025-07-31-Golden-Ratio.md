@@ -96,9 +96,9 @@ $$\phi = 1 + \cfrac{1}{1 + \cfrac{1}{1 + \cfrac{1}{1 + \cfrac{1}{\ddots}}}}$$
 $$\phi = [1; 1, 1, 1, 1, ...]$$
 
 
-### التمثيل كجذر مستمر
+### التمثيل كجذر مستمر (Continued Radical)
 
-$$\phi = \sqrt{1 + \sqrt{1 + \sqrt{1 + \sqrt{1 + \sqrt{1+\ddots}}}}}$$
+$$\phi = \sqrt{1 + \sqrt{1 + \sqrt{1 + \sqrt{1 + \sqrt{1+\cdots}}}}}$$
 
 
 ## العلاقة مع متتالية فيبوناتشي
