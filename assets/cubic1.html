@@ -4,13 +4,13 @@
 <script>
 var x = [];
 var y = [];
-for (let i = -0.5; i <= 1; i += 0.05) {
+for (let i = -0.5; i <= 1; i += 0.001) {
     x.push(i);
     y.push(Math.pow(i, 3) - 6 * Math.pow(i, 2) + 11 * i - 2);
 }
 
 // حساب قيمة الدالة عند الجذر
-var rootX = 0.203785;
+var rootX = 0.20369;
 var rootY = Math.pow(rootX, 3) - 6 * Math.pow(rootX, 2) + 11 * rootX - 2;
 
 Plotly.newPlot('plot', [
