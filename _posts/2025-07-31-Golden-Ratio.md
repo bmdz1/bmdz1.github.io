@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "النسبة الذهبية (Golden Ratio)"
+title: "النسبة الذهبية"
 description: "استكشاف الخصائص الرياضية والجمالية للنسبة الأكثر شهرة في الرياضيات والفن"
 tag: تحليل
 author: Bachir
