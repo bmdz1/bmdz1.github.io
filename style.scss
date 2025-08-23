@@ -343,6 +343,10 @@ mjx-container[jax="CHTML"][display="true"] {
   padding-bottom: 0.4em;     // add breathing space below
 }
 
+
+
+
+
 /*******************/
 /* MCQ QUIZ STYLES */
 /*******************/
@@ -396,3 +400,14 @@ mjx-container[jax="CHTML"][display="true"] {
   text-align: left;
   display: inline-block;
 }
+
+/* Override Bootstrap small fonts */
+body {
+  font-size: 19px !important;
+  line-height: 1.6 !important;
+}
+
+h1 { font-size: 30px !important; }
+h2 { font-size: 24px !important; }
+h3 { font-size: 20px !important; }
+
