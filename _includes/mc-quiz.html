@@ -1,76 +1,80 @@
-<div class="mcq panel panel-primary">
-  <div class="panel-heading">
+<div class="mcq card shadow-sm mb-4">
+  <div class="card-header bg-primary text-white fw-bold">
     {% if include.header %} {{ include.header }} {% else %}سؤال{% endif %}
   </div>
-  <div class="panel-body">
-    <div class="qtext" style="font-size: 20px;">{{ include.text | markdownify}}</div>
-  </div>
-  <table class="choices table" style="border-bottom:1px solid #ddd">
-    <tbody>
-      {% for choice in include.choices %}
-      <tr class="choice">
-        <td class="choice-radio col-xs-1">
-          <input type="radio" name="radio-choices">
-        </td>
-        <td class="choice-text">{{ choice | markdownify}}</td>
-        <td class="choice-feedback"><span class="hidden text-muted">{{ include.feedback[forloop.index0] | markdownify }}</span></td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-  <div class="feedback text-center">
-    <span class="success-msg lead text-success hidden">أتممت الجواب بشكل صحيح</span>
-  </div>
-  <div class="text-center" style="padding: 5px;">
-    <button class="check btn btn-primary" onClick="(function (btn){
-                      answerIndex = {{include.answer}};
-                      feedback = btn.parentNode.previousElementSibling
-                      feedbackMsg = feedback.firstElementChild;
-                      choices = feedback.previousElementSibling.firstElementChild.children;
-                      pBody = feedback.previousElementSibling.previousElementSibling;
-                      panel = pBody.parentNode;
-                      for (i=0; i<choices.length; i++){
-                        radio = choices[i].firstElementChild.firstElementChild;
-                        radio.setAttribute('disabled', true);
-                        if (radio.checked) {
-                          msg = choices[i].lastElementChild.firstElementChild;
-                          msg.classList.remove('hidden');
-                          panel.classList.remove('paenl-primary');
-                          if (i === answerIndex) {
-                            panel.classList.add('panel-success');
-                            feedbackMsg.classList.remove('hidden');
-                          } else {
-                            panel.classList.add('panel-danger');
-                          }
-                        }
-                      }
-                      btn.classList.add('disabled');
-                      //btn.setAttribute('disabled', true);
-                   }(this))">
-      تحقق
-    </button>
-    <button class="reset btn btn-default" onClick="(function (btn){
-                      feedback = btn.parentNode.previousElementSibling
-                      feedbackMsg = feedback.firstElementChild;
-                      feedbackMsg.classList.add('hidden');
-                      choices = feedback.previousElementSibling.firstElementChild.children;
-                      pBody = feedback.previousElementSibling.previousElementSibling;
-                      panel = pBody.parentNode;
-                      panel.classList.remove('panel-success');
-                      panel.classList.remove('panel-danger');
-                      panel.classList.add('panel-primary');
-                      for (i=0; i<choices.length; i++){
-                        radio = choices[i].firstElementChild.firstElementChild;
-                        radio.checked = false;
-                        radio.removeAttribute('disabled');
-                        msg = choices[i].lastElementChild.firstElementChild;
-                        msg.classList.add('hidden');
-                        text = feedback.previousElementSibling;
-                        text.classList.remove('text-success');
-                        text.classList.remove('text-danger');
-                      }
-                      btn.previousElementSibling.classList.remove('disabled');
-                      //btn.previousElementSibling.removeAttribute('disabled');
-                   }(this))">حاول مجددا</button>
+  <div class="card-body">
+    <div class="qtext mb-3 fs-5">{{ include.text | markdownify }}</div>
+
+    <table class="choices table table-borderless">
+      <tbody>
+        {% for choice in include.choices %}
+        <tr class="choice align-middle">
+          <td class="choice-radio text-center" style="width:40px;">
+            <input type="radio" name="radio-choices-{{ include.header | slugify }}" />
+          </td>
+          <td class="choice-text fs-6">{{ choice | markdownify }}</td>
+          <td class="choice-feedback">
+            <span class="hidden text-muted">{{ include.feedback[forloop.index0] | markdownify }}</span>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <div class="feedback text-center">
+      <span class="success-msg lead text-success hidden">✔ أتممت الجواب بشكل صحيح</span>
+    </div>
+
+    <div class="text-center mt-3">
+      <button class="check btn btn-success me-2"
+        onclick="(function (btn){
+          const answerIndex = {{include.answer}};
+          const feedback = btn.parentNode.previousElementSibling;
+          const feedbackMsg = feedback.firstElementChild;
+          const choices = feedback.previousElementSibling.querySelectorAll('.choice');
+          const panel = btn.closest('.mcq');
+
+          choices.forEach((row, i) => {
+            const radio = row.querySelector('input');
+            radio.setAttribute('disabled', true);
+
+            if (radio.checked) {
+              const msg = row.querySelector('.choice-feedback span');
+              msg.classList.remove('hidden');
+
+              if (i === answerIndex) {
+                panel.classList.add('border-success');
+                feedbackMsg.classList.remove('hidden');
+              } else {
+                panel.classList.add('border-danger');
+              }
+            }
+          });
+
+          btn.classList.add('disabled');
+        }(this))">
+        تحقق
+      </button>
+
+      <button class="reset btn btn-outline-secondary"
+        onclick="(function (btn){
+          const panel = btn.closest('.mcq');
+          const feedback = panel.querySelector('.feedback span');
+          feedback.classList.add('hidden');
+
+          const choices = panel.querySelectorAll('.choice');
+          choices.forEach(row => {
+            const radio = row.querySelector('input');
+            radio.checked = false;
+            radio.removeAttribute('disabled');
+            row.querySelector('.choice-feedback span').classList.add('hidden');
+          });
+
+          panel.classList.remove('border-success','border-danger');
+          btn.previousElementSibling.classList.remove('disabled');
+        }(this))">
+        حاول مجددا
+      </button>
+    </div>
   </div>
 </div>
