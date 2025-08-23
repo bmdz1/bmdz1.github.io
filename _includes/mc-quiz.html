@@ -3,9 +3,10 @@
     {% if include.header %} {{ include.header }} {% else %}سؤال{% endif %}
   </div>
   <div class="card-body">
-    <div class="qtext mb-3 fs-5">
-      {{ include.question | markdownify }}
-    </div>
+   <div class="qtext mb-3 fs-5">
+     {{ include.question | markdownify | remove: '<p>' | remove: '</p>' }}
+   </div>
+
 
 
 
