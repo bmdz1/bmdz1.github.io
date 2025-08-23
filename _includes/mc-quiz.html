@@ -3,7 +3,8 @@
     {% if include.header %} {{ include.header }} {% else %}سؤال{% endif %}
   </div>
   <div class="card-body">
-    <div class="qtext mb-3 fs-5">{{ include.question | markdownify }}</div>
+    <div class="qtext">{{ include.text | raw }}</div>
+
 
     <table class="choices table table-borderless">
       <tbody>
