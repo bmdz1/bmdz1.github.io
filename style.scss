@@ -334,12 +334,29 @@ footer {
 // Fix overflow of katex display equations on small screens
 //
 
-mjx-container[jax="CHTML"][display="true"] {
-  overflow-x: auto;          // allow horizontal scroll if equation is too wide
-  overflow-y: hidden;        // don't let it grow vertically in weird ways
-  display: block;            // ensure it behaves as a block element
-  max-width: 100%;           // cap width to container
-  padding-bottom: 0.4em;     // add breathing space below
+/********************/
+/* MathJax overrides */
+/********************/
+
+.mjx-container {
+  font-size: 20px !important;
+  direction: ltr !important;       // keep math left-to-right
+  unicode-bidi: plaintext;         // prevent RTL mixing
+}
+
+.mjx-container[jax="CHTML"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  padding-bottom: 0.4em;
+}
+
+.mjx-container[jax="CHTML"][display="false"] {
+  font-size: 1.05em;
+  margin: 0 0.2em;
 }
 
 
