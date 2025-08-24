@@ -301,10 +301,6 @@ footer {
 }
 
 
-.MathJax {
-    font-size: 20px !important
-}
-
 
 //
 // FOUT fonts
@@ -335,14 +331,28 @@ footer {
 // Fix overflow of katex display equations on small screens
 //
 
-.katex-display {
-  overflow-x: auto;       /* horizontal scroll if equation too wide */
-  overflow-y: hidden;     
-  display: block;         
-  max-width: 100%;        /* keep within container */
-  padding-bottom: 0.4em;  /* breathing room */
+/* Inline math */
+.katex {
+  display: inline-block;
+  direction: ltr;
+  text-align: left;
 }
 
+/* Display/block math */
+.katex-display {
+  display: block !important;    /* force block layout */
+  overflow-x: auto;             /* scroll on small screens */
+  overflow-y: hidden;
+  max-width: 100%;
+  padding-bottom: 0.4em;
+  direction: ltr;
+  text-align: left;
+}
+
+/* Optional monospace for code inside math */
+.katex code {
+  font-family: "Courier New", Courier, monospace;
+}
 
 
 
